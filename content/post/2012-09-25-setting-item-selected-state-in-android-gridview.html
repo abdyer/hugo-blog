@@ -1,0 +1,32 @@
+---
+layout: post
+title: Setting item selected state in Android GridView
+date: "2012-09-25"
+categories: [Android]
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _elasticsearch_indexed_on: "2012-09-25"
+---
+<p>
+When working with the GridView in an Android app recently, I ran into a very strange behavior around setting the selected state for a view created in my ArrayAdapter's getView() method.  I'm using selectors to handle the drawable states and everything works properly when tapping a list item to select/tapping again to unselect.  When debugging the ArrayAdapter's getView() method, I could see that the selected state was being set to the correct value when calling view.setSelected(), but the button background was not updated to the proper state.
+</p>
+<p>
+After going on the obligatory StackOverflow &amp; Google scavenger hunt, I eventually came across <a title="this post" href="http://www.blackmoonit.com/2011/03/android-listview-and-setselection/">this post</a>, which addresses how to call the setSelection() method in a single-select ListView.  It turns out that the same approach is needed when calling setSelected() on an individual view.
+</p>
+<p>
+In short, you must do this:
+</p>
+<pre>private void setSelected(final View view, final boolean selected) {
+    view.post(new Runnable() {
+        @Override
+        public void run() {
+            view.setSelected(selected);
+        }
+    });
+}</pre>
+<p>
+The key is posting a runnable on the UI thread to set the selected state. Otherwise, the view is marked as selected but its visual state is unchanged.
+</p>
