@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Life on Andy Dyer</title>
+    <link>http://andydyer.org/categories/life/</link>
+    <description>Recent content in Life on Andy Dyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2015 Copyright Andy Dyer</copyright>
+    <lastBuildDate>Sun, 14 Jul 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://andydyer.org/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Surprised this domain was available</title>
+      <link>http://andydyer.org/blog/2013/07/14/surprised-this-domain-was-available/</link>
+      <pubDate>Sun, 14 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://andydyer.org/blog/2013/07/14/surprised-this-domain-was-available/</guid>
+      <description>&lt;p&gt;I finally got around to registering a domain name and setting up a basic &lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt; site. I&amp;rsquo;ll be posting here about music/code/coffee/beer/life releated stuff when the mood strikes.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
