@@ -138,3 +138,6 @@ I've been thinking for quite some time about trying to compile a list of all the
 1. *Caribou* - Saturday, November 22, 2014 @ Fitzgerald's, Houston, TX
 1. *Afghan Whigs* - Friday, February 13, 2015 @ Lucerna Music Bar, Prague, Czech Republic
 1. *Speedy Ortiz* - Thursday, May 14, 2015 @ Fitzgerald's, Houston, TX
+1. *Earl Sweatshirt* - Tuesday, September 8, 2015 @ Warehouse Live, Houston, TX
+1. *Run the Jewels* - Tuesday, October 13, 2015 @ House of Blues, Houston, TX
+1. *Fat Tony & Kyle Hubbard* - Friday, October 16, 2015 @ Safe House, Houston, TX

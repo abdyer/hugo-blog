@@ -9,7 +9,7 @@ copyright = "© 2015 Copyright Andy Dyer"
 canonifyurls = true
 
 [params]
-  description = "Android developer & hype man. Beer & coffee snob. Cultivator of beard. Ich lerne Deutsch."
+  description = "Android developer. Beer & coffee snob. Cultivator of beard. Ich lerne Deutsch."
   twitter = "dammitandy" # optional
   github = "abdyer" # optional
   # facebook = "Your facebook Name" # optional
