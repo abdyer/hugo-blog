@@ -10,14 +10,7 @@
           "Old Fashioned"
       ],
       "slug": "black-hole-sun",
-      "recipe": "- Bourbon: 2 oz
-        - Cold Brew Coffee: 1/2 oz
-        - Simple Syrup: 1/2 oz
-        - Chocolate Bitters: 2 dashes
-        - Orange Bitters: 2 dashes
-        - Agnostura Bitters: 1 dash
-
-        Combine ingredients in a glass. Stir and add ice."
+      "recipe": "- Bourbon: 2 oz\n- Cold Brew Coffee: 1/2 oz\n- Simple Syrup: 1/2 oz\n- Chocolate Bitters: 2 dashes\n- Orange Bitters: 2 dashes\n- Agnostura Bitters: 1 dash\n\nCombine ingredients in a glass. Stir and add ice."
   },
   {
       "title": "Black Manhattan",
@@ -30,11 +23,7 @@
           "Exotic"
       ],
       "slug": "black-manhattan",
-      "recipe": "- Bourbon: 2 oz
-      - Montenegro: 1 oz
-      - Agnostura Bitters: 2 dashes
-
-      Combine ingredients in a shaker with ice. Shake and strain into a glass."
+      "recipe": "- Bourbon: 2 oz\n- Montenegro: 1 oz\n- Agnostura Bitters: 2 dashes\n\nCombine ingredients in a shaker with ice. Shake and strain into a glass."
   },
   {
       "title": "Lion's Tail",
@@ -46,13 +35,7 @@
           "Exotic"
       ],
       "slug": "lions-tail",
-      "recipe": "- Bourbon: 2 oz
-      - Lime Juice: 1/2 oz
-      - Allspice Dram: 1/2 oz
-      - Simple Syrup: 1/2 oz
-      - Agnostura Bitters: 1 dash
-
-      Combine ingredients in a shaker with ice. Shake and strain into a glass."
+      "recipe": "- Bourbon: 2 oz\n- Lime Juice: 1/2 oz\n- Allspice Dram: 1/2 oz\n- Simple Syrup: 1/2 oz\n- Agnostura Bitters: 1 dash\n\nCombine ingredients in a shaker with ice. Shake and strain into a glass."
   },
   {
       "title": "Classic Manhattan",
@@ -65,12 +48,7 @@
           "Manhattan"
       ],
       "slug": "manhattan",
-      "recipe": "- Bourbon: 3 oz
-      - Sweet Vermouth: 1 1/2 oz
-      - Grenadine or Maraschino Cherry Juice: 1/2 oz
-      - Agnostura Bitters: 2 dashes
-
-      Combine ingredients in a shaker with ice. Shake and strain into a glass."
+      "recipe": "- Bourbon: 3 oz\n- Sweet Vermouth: 1 1/2 oz\n- Grenadine or Maraschino Cherry Juice: 1/2 oz\n- Agnostura Bitters: 2 dashes\n\nCombine ingredients in a shaker with ice. Shake and strain into a glass."
   },
   {
       "title": "Old Fashioned",
@@ -83,12 +61,7 @@
           "Old Fashioned"
       ],
       "slug": "old-fashioned",
-      "recipe": "- Bourbon: 2 oz
-      - Simple Syrup: 1/2 oz
-      - Agnostura Bitters: 2 dashes
-      - Orange peel
-
-      Combine ingredients in a glass. Twist orange peel, coat rim and inside of glass before adding. Stir and add ice."
+      "recipe": "- Bourbon: 2 oz\n- Simple Syrup: 1/2 oz\n- Agnostura Bitters: 2 dashes\n- Orange peel\n\nCombine ingredients in a glass. Twist orange peel, coat rim and inside of glass before adding. Stir and add ice."
   },
   {
       "title": "Planter's Punch",
@@ -100,13 +73,6 @@
           "Exotic"
       ],
       "slug": "planters-punch",
-      "recipe": "- Rum: 2 oz
-      - Orange Juice: 1 1/6 oz
-      - Pineapple Juice: 1 1/6 oz
-      - Lemon Juice: 2/3 oz
-      - Grenadine: 1/3 oz
-      - Agnostura Bitters: 3 dashes
-
-      Combine ingredients in a shaker with ice. Shake and pour into a glass."
+      "recipe": "- Rum: 2 oz\n- Orange Juice: 1 1/6 oz\n- Pineapple Juice: 1 1/6 oz\n- Lemon Juice: 2/3 oz\n- Grenadine: 1/3 oz\n- Agnostura Bitters: 3 dashes\n\nCombine ingredients in a shaker with ice. Shake and pour into a glass."
   }
 ]
