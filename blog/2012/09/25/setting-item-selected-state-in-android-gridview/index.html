@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Setting item selected state in Android GridView</title>
+  <link href="http://andydyer.org/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="http://andydyer.org/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style type="text/css">
+  
+    footer.page-footer{background-image: url(http://andydyer.org/images/default.png);}
+  
+  </style>
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="http://andydyer.org"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://andydyer.org/categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://andydyer.org/tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <hr>
+    <li><a href="http://andydyer.org/bands-ive-seen-live">Bands I've Seen Live</a>
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <a href="http://andydyer.org/">
+          <img class="gravatar" src="http://www.gravatar.com/avatar/e0ac1256093c733a5d5a26085b90966f?s=120" />
+          <h1 class="header center teal-text text-lighten-2">Andy Dyer</h1>
+        </a>
+        <div class="row center">
+          <h5 class="header col s12 light">Android developer. Beer &amp; coffee snob. Cultivator of beard. Ich lerne Deutsch.</h5>
+        </div>
+        <div class="row center">
+        
+          <a href="https://github.com/abdyer"><img src="http://andydyer.org/images/github2-dreamstale35.png"></a>
+        
+        
+        
+          <a href="https://twitter.com/dammitandy"><img src="http://andydyer.org/images/twitter-dreamstale71.png"></a>
+        
+        
+          <a href="https://google.com/+AndrewDyer"><img src="http://andydyer.org/images/gplus48x48.png"></a>
+        
+        
+          <a href="https://www.linkedin.com/in/abdyer"><img src="http://andydyer.org/images/linkedin-dreamstale45.png"></a>
+        
+          <a href="http://andydyer.org/index.xml"><img src="http://andydyer.org/images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="http://andydyer.org/images/default.png">
+    
+    </div>
+  </div>
+
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h4>Setting item selected state in Android GridView</h4>
+          <p>
+          
+            
+              <a href="http://andydyer.org/categories/android/">Android</a>
+            
+           
+          </p>
+          <p><p>
+When working with the GridView in an Android app recently, I ran into a very strange behavior around setting the selected state for a view created in my ArrayAdapter's getView() method.  I'm using selectors to handle the drawable states and everything works properly when tapping a list item to select/tapping again to unselect.  When debugging the ArrayAdapter's getView() method, I could see that the selected state was being set to the correct value when calling view.setSelected(), but the button background was not updated to the proper state.
+</p>
+<p>
+After going on the obligatory StackOverflow &amp; Google scavenger hunt, I eventually came across <a title="this post" href="http://www.blackmoonit.com/2011/03/android-listview-and-setselection/">this post</a>, which addresses how to call the setSelection() method in a single-select ListView.  It turns out that the same approach is needed when calling setSelected() on an individual view.
+</p>
+<p>
+In short, you must do this:
+</p>
+<pre>private void setSelected(final View view, final boolean selected) {
+    view.post(new Runnable() {
+        @Override
+        public void run() {
+            view.setSelected(selected);
+        }
+    });
+}</pre>
+<p>
+The key is posting a runnable on the UI thread to set the selected state. Otherwise, the view is marked as selected but its visual state is unchanged.
+</p></p>
+          <p>25 Sep 2012
+            
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://andydyer.org/blog/2013/07/14/surprised-this-domain-was-available/"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://andydyer.org/blog/2012/02/03/a-functional-queue-in-javascript/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      © 2015 Copyright Andy Dyer
+      <div class="right">Design <a class="grey-text text-lighten-4" href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="http://andydyer.org/js/materialize.min.js"></script>
+  <script src="http://andydyer.org/js/init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-48421946-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+
+  </body>
+</html>
+

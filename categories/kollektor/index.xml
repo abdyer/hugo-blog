@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kollektor on Andy Dyer</title>
+    <link>http://andydyer.org/categories/kollektor/</link>
+    <description>Recent content in Kollektor on Andy Dyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2015 Copyright Andy Dyer</copyright>
+    <lastBuildDate>Sat, 28 Dec 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://andydyer.org/categories/kollektor/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Introducing Kollektor</title>
+      <link>http://andydyer.org/blog/2013/12/28/introducing-kollektor/</link>
+      <pubDate>Sat, 28 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://andydyer.org/blog/2013/12/28/introducing-kollektor/</guid>
+      <description>
+
+&lt;h5 id=&#34;why-a-new-app:cec02607876d5617fbefee0c6f82b7fe&#34;&gt;Why a new app?&lt;/h5&gt;
+
+&lt;p&gt;When I first decided to get into Android development, I created the &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.dandydev.medialibrary&#34;&gt;Music Library&lt;/a&gt; app to catalog my vinyl collection. It served me well as I learned the ins and outs of Android programming including &lt;a href=&#34;http://developer.android.com/guide/topics/providers/content-providers.html&#34;&gt;content providers&lt;/a&gt;, interacting with other applications via &lt;a href=&#34;http://developer.android.com/reference/android/content/Intent.html&#34;&gt;intents&lt;/a&gt;, working with the file system to save/load images, making API requests, etc. In order to test the workings of the Android app market, I published the ad supported Music Library Free and the paid Music Library versions of the app. In addition to not displaying ads, Music Library also included the ability to backup your collection to the device&amp;rsquo;s SD card and export data to a Google Drive spreadsheet.&lt;/p&gt;
+
+&lt;p&gt;Both apps have seen a modest number of downloads over the past couple years. I&amp;rsquo;ve heard from people around the world who have found the apps useful, from music critics to casual collectors like myself. In addition to making it easy to catalog your record collection, Music Library included customization options such as the ability to add album art and manually add/edit release information. However, one of the most recurring feature requests was to support syncing data across devices.&lt;/p&gt;
+
+&lt;h5 id=&#34;what-it-do:cec02607876d5617fbefee0c6f82b7fe&#34;&gt;What it do?&lt;/h5&gt;
+
+&lt;p&gt;I initially started down the road of building my own API to manage the app&amp;rsquo;s data to facilitate the data sync. A web site would provide another way to access your collection, eventually serving as a platform for adding social features for sharing with friends. Along the way, I took a closer look at &lt;a href=&#34;http://www.discogs.com/&#34;&gt;Discogs&lt;/a&gt; and realized that in addition to providing a very large database of releases for searches, its API was also fairly mature. By re-imagining Music Library as a Discogs client, I would improve upon Music Library in the following ways:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Enable viewing your collection on all your devices while simultaneously removing the need to support import/export/backup features.&lt;/li&gt;
+&lt;li&gt;Remove the need to add/edit release information manually on the device. An artist/album title search or barcode scan make it easy to add releases to your collection. Album art, track tiles, and other details are all pulled from Discogs&amp;rsquo; user-sourced release database.&lt;/li&gt;
+&lt;li&gt;Implement an in-app purchase to remove ads and support future development. Aside from being much more straightforward, it also avoids the need to have an upgrade process for transferring data from the free version to the paid version.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;open-source-shout-outs:cec02607876d5617fbefee0c6f82b7fe&#34;&gt;Open source shout-outs&lt;/h5&gt;
+
+&lt;p&gt;Building a new app from scratch allowed me to see what a few years of experience and leveraging open source libraries could do to streamline development. I used the following libraries to build the app (many of which I&amp;rsquo;ve mentioned in &lt;a href=&#34;http://andydyer.org/blog/2013/10/11/big-android-bbq-2013-android-open-source-libraries-you-need-in-your-life/&#34;&gt;my recent Android libraries talks&lt;/a&gt;):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.google.com/events/io/sessions/325304728&#34;&gt;Volley&lt;/a&gt; - API requests and asynchronous image loading&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.google.com/p/google-gson/&#34;&gt;GSON&lt;/a&gt; - Parsing API JSON responses&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://greendao-orm.com/&#34;&gt;GreenDAO ORM&lt;/a&gt; - Local data storage&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/fernandezpablo85/scribe-java&#34;&gt;Scribe&lt;/a&gt; - OAuth login and request signing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://square.github.io/otto/&#34;&gt;Otto&lt;/a&gt; - Event bus, activity/fragment communication&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ManuelPeinado/FadingActionBar&#34;&gt;Fading Action Bar&lt;/a&gt; - Release detail scrolling/parallax effect&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/uservoice/uservoice-android-sdk&#34;&gt;UserVoice SDK&lt;/a&gt; - Support &amp;amp; feature requests&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;kollektor:cec02607876d5617fbefee0c6f82b7fe&#34;&gt;Kollektor&lt;/h5&gt;
+
+&lt;p&gt;I always felt that &amp;ldquo;Music Library&amp;rdquo;, while descriptive was a bit too generic of a name for the app. I chose to name the new app &amp;ldquo;Kollektor&amp;rdquo; simply because I&amp;rsquo;m learning German and liked the funky spelling. I briefly considered &amp;ldquo;Plattensammler&amp;rdquo;, but decided it&amp;rsquo;s too long and less obvious.&lt;/p&gt;
+
+&lt;h5 id=&#34;what-s-next:cec02607876d5617fbefee0c6f82b7fe&#34;&gt;What&amp;rsquo;s next&lt;/h5&gt;
+
+&lt;p&gt;A quick list of potential features to be added to Kollektor:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Include other Discogs fields such as notes and reviews&lt;/li&gt;
+&lt;li&gt;Album check-in/now playing sharing&lt;/li&gt;
+&lt;li&gt;Sharing your collection with friends&lt;/li&gt;
+&lt;li&gt;Importing collections from Music Library (this may take some time as Discogs does not support a bulk data import process and there is no direct mapping of Amazon releases to Discogs releases)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;download:cec02607876d5617fbefee0c6f82b7fe&#34;&gt;Download&lt;/h5&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.dandydev.kollektor&#34;&gt;Kollektor&lt;/a&gt; on Google Play&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

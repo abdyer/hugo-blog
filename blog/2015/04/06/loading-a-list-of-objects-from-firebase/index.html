@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Loading a List of Objects from Firebase</title>
+  <link href="http://andydyer.org/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="http://andydyer.org/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style type="text/css">
+  
+    footer.page-footer{background-image: url(http://andydyer.org/images/default.png);}
+  
+  </style>
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="http://andydyer.org"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://andydyer.org/categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://andydyer.org/tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <hr>
+    <li><a href="http://andydyer.org/bands-ive-seen-live">Bands I've Seen Live</a>
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <a href="http://andydyer.org/">
+          <img class="gravatar" src="http://www.gravatar.com/avatar/e0ac1256093c733a5d5a26085b90966f?s=120" />
+          <h1 class="header center teal-text text-lighten-2">Andy Dyer</h1>
+        </a>
+        <div class="row center">
+          <h5 class="header col s12 light">Android developer. Beer &amp; coffee snob. Cultivator of beard. Ich lerne Deutsch.</h5>
+        </div>
+        <div class="row center">
+        
+          <a href="https://github.com/abdyer"><img src="http://andydyer.org/images/github2-dreamstale35.png"></a>
+        
+        
+        
+          <a href="https://twitter.com/dammitandy"><img src="http://andydyer.org/images/twitter-dreamstale71.png"></a>
+        
+        
+          <a href="https://google.com/+AndrewDyer"><img src="http://andydyer.org/images/gplus48x48.png"></a>
+        
+        
+          <a href="https://www.linkedin.com/in/abdyer"><img src="http://andydyer.org/images/linkedin-dreamstale45.png"></a>
+        
+          <a href="http://andydyer.org/index.xml"><img src="http://andydyer.org/images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="http://andydyer.org/images/default.png">
+    
+    </div>
+  </div>
+
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h4>Loading a List of Objects from Firebase</h4>
+          <p>
+          
+            
+              <a href="http://andydyer.org/categories/android/">Android</a>
+            
+              <a href="http://andydyer.org/categories/apps/">Apps</a>
+            
+           
+          </p>
+          <p><p>I&rsquo;ve been working with <a href="https://www.firebase.com/">Firebase</a> lately in preparation for adding data synchronization to my <a href="https://play.google.com/store/apps/details?id=com.dandydev.medialibrary">Music Library</a> app. Their <a href="https://www.firebase.com/docs/android/quickstart.html">docs</a> did a great job of getting me set up. Using the <a href="https://github.com/firebase/firebase-login-demo-android">sample app</a> as a guide, I even got Google+ OAuth working without much trouble. From there, it didn&rsquo;t take long to load data into a Firebase instance partitioned by Google account. All that was left was to query the data out of Firebase and I&rsquo;d be able to see the sync magic in action.</p>
+
+<p>As you probably guessed from the title of this post, fetching a collection of objects from Firebase was not quite as straightforward. The documentation on <a href="https://www.firebase.com/docs/android/guide/retrieving-data.html">retrieving data</a> covers the methods for executing asynchronous queries, but uses HashMap results instead of the objects I initially stored. Um&hellip;no thanks.</p>
+
+<p>I eventually noticed an overload of the <code>getValue()</code> method  of the <code>DataSnapshot</code> class that takes a <code>GenericTypeIndicator&lt;T&gt;</code> parameter. In the <a href="https://www.firebase.com/docs/java-api/javadoc/com/firebase/client/GenericTypeIndicator.html">JavaDocs</a> for that class, is the secret sauce:</p>
+
+<pre><code class="language-java">GenericTypeIndicator&lt;List&lt;Beer&gt;&gt; typeIndicator = new GenericTypeIndicator&lt;List&lt;Beer&gt;&gt;() {};
+List&lt;Beer&gt; beers = snapshot.getValue(typeIndicator);
+</code></pre>
+
+<p><br/>
+Combining that with <a href="https://gist.github.com/gsoltis/86210e3259dcc6998801">these</a> awesome RxJava Firebase bindings, I can now load a list with something as simple as:</p>
+
+<pre><code class="language-java">private Observable&lt;List&lt;Beer&gt;&gt; loadBeers() {
+    Firebase firebase = new Firebase(&quot;https://some-instance.firebaseio.com/beers&quot;);
+    GenericTypeIndicator&lt;List&lt;Beer&gt;&gt; typeIndicator = new GenericTypeIndicator&lt;List&lt;Beer&gt;&gt;() {};
+    return RxFirebase.observe(firebase.orderByKey())
+        .map(snapshot -&gt; snapshot.getValue(typeIndicator));
+}
+</code></pre>
+
+<p>Aside from this little hiccup, Firebase is hard to beat for easy persistence that automatically syncs across devices. I look forward to seeing what [Google](<a href="https://www.firebase.com/blog/&quot;2014-10-21&quot;">https://www.firebase.com/blog/&quot;2014-10-21&quot;</a></p>
+</p>
+          <p>6 Apr 2015
+            
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://andydyer.org/blog/2015/06/09/the-time-i-interviewed-at-google/"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://andydyer.org/blog/2015/02/19/why-im-unironically-carrying-this-small-older-android-phone/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      © 2015 Copyright Andy Dyer
+      <div class="right">Design <a class="grey-text text-lighten-4" href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="http://andydyer.org/js/materialize.min.js"></script>
+  <script src="http://andydyer.org/js/init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-48421946-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+
+  </body>
+</html>
+

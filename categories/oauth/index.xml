@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oauth on Andy Dyer</title>
+    <link>http://andydyer.org/categories/oauth/</link>
+    <description>Recent content in Oauth on Andy Dyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2015 Copyright Andy Dyer</copyright>
+    <lastBuildDate>Sun, 15 Dec 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://andydyer.org/categories/oauth/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Signing Volley Requests with Scribe</title>
+      <link>http://andydyer.org/blog/2013/12/15/signing-volley-requests-with-scribe/</link>
+      <pubDate>Sun, 15 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://andydyer.org/blog/2013/12/15/signing-volley-requests-with-scribe/</guid>
+      <description>&lt;p&gt;When I initially needed to integrate OAuth request signing with &lt;a href=&#34;https://android.googlesource.com/platform/frameworks/volley&#34;&gt;Volley&lt;/a&gt; in my Android app, I used the &lt;a href=&#34;https://code.google.com/p/oauth-signpost/&#34;&gt;Signpost library&lt;/a&gt;. It was fairly straightforward to build a URL, pass it to the Signpost OAuthConsumer, and retrieve a new string with the appropriate OAuth parameters added. Unfortunately, as you can see from the &lt;a href=&#34;https://github.com/mttkay/signpost/commits/master&#34;&gt;commit history&lt;/a&gt;, there has been very little activity over the past year.&lt;/p&gt;
+
+&lt;p&gt;Increasingly, I see recommendations for &lt;a href=&#34;https://github.com/fernandezpablo85/scribe-java&#34;&gt;Scribe&lt;/a&gt;. The project is very active and it makes &lt;a href=&#34;https://github.com/fernandezpablo85/scribe-java/wiki/getting-started&#34;&gt;implementing OAuth request signing&lt;/a&gt; as easy as it&amp;rsquo;s likely to get.&lt;/p&gt;
+
+&lt;p&gt;At first glance, one big problem integrating Scribe with Volley is that the library is designed to use its own &lt;strong&gt;OAuthRequest&lt;/strong&gt; class. Of course, this doesn&amp;rsquo;t jibe with Volley since requests must extend &lt;strong&gt;com.android.volley.Request&amp;lt;T&amp;gt;&lt;/strong&gt; to take advantage of the request queue sexiness. Since Java does not have multiple inheritance, my first approach involved an unholy attempt to merge the necessary Scribe request code with my Volley request subclass. While this did familiarize me a bit with the inner workings of Scribe&amp;rsquo;s request signing process, I quickly realized this was a nasty hack.&lt;/p&gt;
+
+&lt;p&gt;In the end, I decided to let Scribe&amp;rsquo;s &lt;strong&gt;OAuthRequest&lt;/strong&gt; class handle the signing and simply transfer the resulting OAuth parameters to my Volley request.&lt;/p&gt;
+
+&lt;p&gt;The general process is as follows:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Override the &lt;strong&gt;getUrl()&lt;/strong&gt; method in your custom request class.&lt;/li&gt;
+&lt;li&gt;Translate the Volley request method to the corresponding Scribe &lt;strong&gt;Verb&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Create an instance of scribe &lt;strong&gt;OAuthRequest&lt;/strong&gt; with the base request URL. Then, iterate over the Volley request parameters and add them to the &lt;strong&gt;OAuthRequest&lt;/strong&gt; object.&lt;/li&gt;
+&lt;li&gt;Sign the &lt;strong&gt;OAuthRequest&lt;/strong&gt; object using an instance of the Scribe &lt;strong&gt;OAuthService&lt;/strong&gt; with your stored token (I stash my &lt;strong&gt;OAuthService&lt;/strong&gt; and &lt;strong&gt;Token&lt;/strong&gt; instances in my &lt;strong&gt;Application&lt;/strong&gt; subclass).&lt;/li&gt;
+&lt;li&gt;Iterate over the &lt;strong&gt;OAuthRequest&lt;/strong&gt; object&amp;rsquo;s OAuth parameters and add them to your Volley request&amp;rsquo;s parameters.&lt;/li&gt;
+&lt;li&gt;Add the Volley request to the queue as normal.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And some code to demonstrate:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package com.example.MyApp;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+
+import org.scribe.model.OAuthRequest;
+import org.scribe.model.Token;
+import org.scribe.model.Verb;
+
+import java.util.Map;
+
+public class VolleyOAuthRequest&amp;lt;T&amp;gt; extends Request&amp;lt;T&amp;gt; {
+
+    private HashMap&amp;lt;String, String&amp;gt; params;
+    private OAuthRequest oAuthRequest;
+
+    public DiscogsOAuthRequest(int method, String path, Response.ErrorListener errorListener) {
+        super(method, path, errorListener);
+        params = new HashMap&amp;lt;String, String&amp;gt;();
+    }
+
+    public void addParameter(String key, String value) {
+        params.put(key, value);
+    }
+
+    @Override
+    protected Map&amp;lt;String, String&amp;gt; getParams() {
+      return params;
+    }
+
+    @Override
+    public String getUrl() {
+        if(oAuthRequest == null) {
+            buildOAuthRequest();
+
+            for(Map.Entry&amp;lt;String, String&amp;gt; entry : oAuthRequest.getOauthParameters().entrySet()) {
+                addParameter(entry.getKey(), entry.getValue());
+            }
+        }
+        return super.getUrl() + getParameterString();
+    }
+
+    private void buildOAuthRequest() {
+        oAuthRequest = new OAuthRequest(getVerb(), super.getUrl());
+        for(Map.Entry&amp;lt;String, String&amp;gt; entry : getParams().entrySet()) {
+            oAuthRequest.addQuerystringParameter(entry.getKey(), entry.getValue());
+        }
+        Token token = MyApp.getOAuthToken();
+        MyApp.getOAuthService().signRequest(token, oAuthRequest);
+    }
+
+    private Verb getVerb() {
+        switch (getMethod()) {
+            case Method.GET:
+                return Verb.GET;
+            case Method.DELETE:
+                return Verb.DELETE;
+            case Method.POST:
+                return Verb.POST;
+            case Method.PUT:
+                return Verb.PUT;
+            default:
+                return Verb.GET;
+        }
+    }
+
+    private String getParameterString() {
+        StringBuilder sb = new StringBuilder(&amp;quot;?&amp;quot;);
+        Iterator&amp;lt;String&amp;gt; keys = params.keySet().iterator();
+        while(keys.hasNext()) {
+            String key = keys.next();
+            sb.append(String.format(&amp;quot;&amp;amp;%s=%s&amp;quot;, key, params.get(key)));
+        }
+        return sb.toString();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Music Library on Andy Dyer</title>
+    <link>http://andydyer.org/categories/music-library/</link>
+    <description>Recent content in Music Library on Andy Dyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2015 Copyright Andy Dyer</copyright>
+    <lastBuildDate>Sun, 02 Nov 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://andydyer.org/categories/music-library/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Music Library 3.0 - Material Design Update</title>
+      <link>http://andydyer.org/blog/2014/11/02/music-library-3.0---material-design-update/</link>
+      <pubDate>Sun, 02 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://andydyer.org/blog/2014/11/02/music-library-3.0---material-design-update/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://andydyer.org/images/music_library_icon.png&#34; alt=&#34;Music Library&#34; style=&#34;width: 150px; float: left; margin-right: 20px&#34; /&gt;
+I started developing &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.dandydev.medialibrary&#34;&gt;Music Library&lt;/a&gt; about four years ago when I wanted an app for organizing my record collection. Armed with my Nexus One, Eclipse, and a copy of Apress&amp;rsquo; &lt;a href=&#34;http://www.amazon.com/gp/product/1430246804/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;creativeASIN=1430246804&amp;amp;linkCode=as2&amp;amp;tag=slacod-20&amp;amp;linkId=FMLK73AOGDPPJEM3&#34;&gt;Pro Android&lt;/a&gt;, I spent my nights and weekends learning the inner workings of my now-favorite mobile OS.&lt;/p&gt;
+
+&lt;p&gt;Over the years, Music Library has been a playground of sorts for exploring various open source libraries, patterns, and best practices. While there is still a fair amount of code I would write differently today (I&amp;rsquo;m looking at you, ContentProvider), the app has been and continues to be an enjoyable side project.&lt;/p&gt;
+
+&lt;p&gt;Whether fixing bugs or implementing new features, I adhere to the &lt;a href=&#34;http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule&#34;&gt;Boy Scout Rule&lt;/a&gt; as much as possible, balancing the urge to rewrite everything with what makes sense for the changes being made. Despite my attempts at pragmatism, Google&amp;rsquo;s roughly semiannual overhaul of the Android UI has a way of quickly dating apps that do not keep up with the latest design guidelines. Remember gradients everywhere in Gingerbread? Or when Honeycomb and Holo ushered in the last big design change? &lt;a href=&#34;http://www.google.com/design/spec/material-design/introduction.html&#34;&gt;Material Design&lt;/a&gt; continues that tradition, only more ambitious in scope; this time unifying the design of mobile, web, and Chromebook apps in one fell swoop.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://googleblog.blogspot.com/2014/10/android-be-together-not-same.html&#34;&gt;official announcement&lt;/a&gt; of Lollipop and the release of the latest support library last month motivated me to update Music Library yet again to keep up with the latest evolution of the platform. After surveying the contents of the new version of the support library, I got to work bringing Material Design to the app.&lt;/p&gt;
+
+&lt;p&gt;I started by applying the &lt;code&gt;Theme.AppCompat.Light.DarkActionBar&lt;/code&gt; theme as described on the &lt;a href=&#34;http://android-developers.blogspot.com/2014/10/appcompat-v21-material-design-for-pre.html&#34;&gt;Android Developers&lt;/a&gt; blog, which changed the action bar, color scheme, and widgets from the now too-familiar Holo electric blue to the new Material look.&lt;/p&gt;
+
+&lt;p&gt;Once that was done, I found that the spinner navigation the app was using has been deprecated in Lollipop. Taking a cue from Google&amp;rsquo;s own apps such as Gmail and the Play Store, I decided to move the shelf list into a left navigation drawer. Menu options such as Scan Barcode, Settings, and editing the list of shelves also moved into the nav drawer. This left only the more common actions of Add, Edit, Search, and Sort in the action bar/overflow menu, cleaning things up significantly.&lt;/p&gt;
+
+&lt;p&gt;From there, I turned to the album art images, making them more prominent throughout the app. I used the &lt;code&gt;GridLayoutManager&lt;/code&gt; and &lt;code&gt;CardView&lt;/code&gt; widget to display the list of albums in a grid rather than a list, putting the focus on the artwork that makes our favorite albums immediately recognizable. This had the additional benefit of obviating the coverflow view that while fun to play with, always felt a bit out of place on Android.&lt;/p&gt;
+
+&lt;p&gt;To further enhance the look of the app, I used the &lt;a href=&#34;https://blog.stylingandroid.com/palette-part-2/&#34;&gt;Palette library&lt;/a&gt; to extract a dark vibrant color from each album&amp;rsquo;s artwork for the action bar and fonts. As the selected album changes, the app&amp;rsquo;s colors morph to complement the artwork. I&amp;rsquo;m amazed how well it works. I&amp;rsquo;ve yet to see a case where it didn&amp;rsquo;t result in just the right color for the image being displayed.&lt;/p&gt;
+
+&lt;p&gt;As you can see from the before and after screen shots below, the redesign breathes new life into the app. I&amp;rsquo;m quite pleased with the result. I look forward to applying more Material Design elements to this app and others over the next few months.
+&lt;br/&gt;
+&lt;table style=&#34;margin-left: auto; margin-right: auto&#34;&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Version 2.x (Holo)&lt;/th&gt;
+    &lt;th&gt;Version 3.0 (Material Design)&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;a href=&#34;http://andydyer.org/images/music_library_title_list_v2.png&#34;&gt;&lt;img src=&#34;http://andydyer.org/images/music_library_title_list_v2.png&#34; alt=&#34;Title List v2.x&#34; style=&#34;width: 253px; margin-left: 20px; margin-right: 20px; margin-bottom:20px&#34; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&#34;http://andydyer.org/images/music_library_title_list_v3.png&#34;&gt;&lt;img src=&#34;http://andydyer.org/images/music_library_title_list_v3.png&#34; alt=&#34;Title List v3.0&#34; style=&#34;width: 253px; margin-right: 20px; margin-bottom: 20px&#34; /&gt;&lt;/a&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;a href=&#34;http://andydyer.org/images/music_library_title_edit_v2.png&#34;&gt;&lt;img src=&#34;http://andydyer.org/images/music_library_title_edit_v2.png&#34; alt=&#34;Title Edit v2.x&#34; style=&#34;width: 253px; margin-left:20px; margin-right: 20px; margin-bottom: 20px&#34; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&#34;http://andydyer.org/images/music_library_title_edit_v3.png&#34;&gt;&lt;img src=&#34;http://andydyer.org/images/music_library_title_edit_v3.png&#34; alt=&#34;Title Edit v3.0&#34; style=&#34;width: 253px; margin-right: 20px; margin-bottom: 20px&#34; /&gt;&lt;/a&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;
+&lt;div style=&#34;text-align: center&#34;&gt;
+    &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.dandydev.medialibrary&#34; title=&#34;Get Music Library&#34;&gt;
+        &lt;img alt=&#34;Get it on Google Play&#34; width=&#34;203&#34; src=&#34;http://andydyer.org/images/google_play_badge@2x.png&#34;&gt;
+    &lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Introducing Kollektor</title>
+  <link href="http://andydyer.org/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="http://andydyer.org/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style type="text/css">
+  
+    footer.page-footer{background-image: url(http://andydyer.org/images/default.png);}
+  
+  </style>
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="http://andydyer.org"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://andydyer.org/categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://andydyer.org/tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <hr>
+    <li><a href="http://andydyer.org/bands-ive-seen-live">Bands I've Seen Live</a>
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <a href="http://andydyer.org/">
+          <img class="gravatar" src="http://www.gravatar.com/avatar/e0ac1256093c733a5d5a26085b90966f?s=120" />
+          <h1 class="header center teal-text text-lighten-2">Andy Dyer</h1>
+        </a>
+        <div class="row center">
+          <h5 class="header col s12 light">Android developer. Beer &amp; coffee snob. Cultivator of beard. Ich lerne Deutsch.</h5>
+        </div>
+        <div class="row center">
+        
+          <a href="https://github.com/abdyer"><img src="http://andydyer.org/images/github2-dreamstale35.png"></a>
+        
+        
+        
+          <a href="https://twitter.com/dammitandy"><img src="http://andydyer.org/images/twitter-dreamstale71.png"></a>
+        
+        
+          <a href="https://google.com/+AndrewDyer"><img src="http://andydyer.org/images/gplus48x48.png"></a>
+        
+        
+          <a href="https://www.linkedin.com/in/abdyer"><img src="http://andydyer.org/images/linkedin-dreamstale45.png"></a>
+        
+          <a href="http://andydyer.org/index.xml"><img src="http://andydyer.org/images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="http://andydyer.org/images/default.png">
+    
+    </div>
+  </div>
+
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h4>Introducing Kollektor</h4>
+          <p>
+          
+            
+              <a href="http://andydyer.org/categories/android/">Android</a>
+            
+              <a href="http://andydyer.org/categories/apps/">Apps</a>
+            
+              <a href="http://andydyer.org/categories/kollektor/">Kollektor</a>
+            
+              <a href="http://andydyer.org/categories/vinyl/">Vinyl</a>
+            
+              <a href="http://andydyer.org/categories/music/">Music</a>
+            
+           
+          </p>
+          <p>
+
+<h5 id="why-a-new-app:cec02607876d5617fbefee0c6f82b7fe">Why a new app?</h5>
+
+<p>When I first decided to get into Android development, I created the <a href="https://play.google.com/store/apps/details?id=com.dandydev.medialibrary">Music Library</a> app to catalog my vinyl collection. It served me well as I learned the ins and outs of Android programming including <a href="http://developer.android.com/guide/topics/providers/content-providers.html">content providers</a>, interacting with other applications via <a href="http://developer.android.com/reference/android/content/Intent.html">intents</a>, working with the file system to save/load images, making API requests, etc. In order to test the workings of the Android app market, I published the ad supported Music Library Free and the paid Music Library versions of the app. In addition to not displaying ads, Music Library also included the ability to backup your collection to the device&rsquo;s SD card and export data to a Google Drive spreadsheet.</p>
+
+<p>Both apps have seen a modest number of downloads over the past couple years. I&rsquo;ve heard from people around the world who have found the apps useful, from music critics to casual collectors like myself. In addition to making it easy to catalog your record collection, Music Library included customization options such as the ability to add album art and manually add/edit release information. However, one of the most recurring feature requests was to support syncing data across devices.</p>
+
+<h5 id="what-it-do:cec02607876d5617fbefee0c6f82b7fe">What it do?</h5>
+
+<p>I initially started down the road of building my own API to manage the app&rsquo;s data to facilitate the data sync. A web site would provide another way to access your collection, eventually serving as a platform for adding social features for sharing with friends. Along the way, I took a closer look at <a href="http://www.discogs.com/">Discogs</a> and realized that in addition to providing a very large database of releases for searches, its API was also fairly mature. By re-imagining Music Library as a Discogs client, I would improve upon Music Library in the following ways:</p>
+
+<ul>
+<li>Enable viewing your collection on all your devices while simultaneously removing the need to support import/export/backup features.</li>
+<li>Remove the need to add/edit release information manually on the device. An artist/album title search or barcode scan make it easy to add releases to your collection. Album art, track tiles, and other details are all pulled from Discogs&rsquo; user-sourced release database.</li>
+<li>Implement an in-app purchase to remove ads and support future development. Aside from being much more straightforward, it also avoids the need to have an upgrade process for transferring data from the free version to the paid version.</li>
+</ul>
+
+<h5 id="open-source-shout-outs:cec02607876d5617fbefee0c6f82b7fe">Open source shout-outs</h5>
+
+<p>Building a new app from scratch allowed me to see what a few years of experience and leveraging open source libraries could do to streamline development. I used the following libraries to build the app (many of which I&rsquo;ve mentioned in <a href="http://andydyer.org/blog/2013/10/11/big-android-bbq-2013-android-open-source-libraries-you-need-in-your-life/">my recent Android libraries talks</a>):</p>
+
+<ul>
+<li><a href="https://developers.google.com/events/io/sessions/325304728">Volley</a> - API requests and asynchronous image loading</li>
+<li><a href="https://code.google.com/p/google-gson/">GSON</a> - Parsing API JSON responses</li>
+<li><a href="http://greendao-orm.com/">GreenDAO ORM</a> - Local data storage</li>
+<li><a href="https://github.com/fernandezpablo85/scribe-java">Scribe</a> - OAuth login and request signing</li>
+<li><a href="http://square.github.io/otto/">Otto</a> - Event bus, activity/fragment communication</li>
+<li><a href="https://github.com/ManuelPeinado/FadingActionBar">Fading Action Bar</a> - Release detail scrolling/parallax effect</li>
+<li><a href="https://github.com/uservoice/uservoice-android-sdk">UserVoice SDK</a> - Support &amp; feature requests</li>
+</ul>
+
+<h5 id="kollektor:cec02607876d5617fbefee0c6f82b7fe">Kollektor</h5>
+
+<p>I always felt that &ldquo;Music Library&rdquo;, while descriptive was a bit too generic of a name for the app. I chose to name the new app &ldquo;Kollektor&rdquo; simply because I&rsquo;m learning German and liked the funky spelling. I briefly considered &ldquo;Plattensammler&rdquo;, but decided it&rsquo;s too long and less obvious.</p>
+
+<h5 id="what-s-next:cec02607876d5617fbefee0c6f82b7fe">What&rsquo;s next</h5>
+
+<p>A quick list of potential features to be added to Kollektor:</p>
+
+<ul>
+<li>Include other Discogs fields such as notes and reviews</li>
+<li>Album check-in/now playing sharing</li>
+<li>Sharing your collection with friends</li>
+<li>Importing collections from Music Library (this may take some time as Discogs does not support a bulk data import process and there is no direct mapping of Amazon releases to Discogs releases)</li>
+</ul>
+
+<h5 id="download:cec02607876d5617fbefee0c6f82b7fe">Download</h5>
+
+<p><a href="https://play.google.com/store/apps/details?id=com.dandydev.kollektor">Kollektor</a> on Google Play</p>
+</p>
+          <p>28 Dec 2013
+            
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://andydyer.org/blog/2014/03/07/presenting-wrist-presenter-for-android-and-the-pebble-smartwatch/"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://andydyer.org/blog/2013/12/22/top-10-albums-of-2013/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      © 2015 Copyright Andy Dyer
+      <div class="right">Design <a class="grey-text text-lighten-4" href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="http://andydyer.org/js/materialize.min.js"></script>
+  <script src="http://andydyer.org/js/init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-48421946-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+
+  </body>
+</html>
+

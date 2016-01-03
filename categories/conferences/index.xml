@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conferences on Andy Dyer</title>
+    <link>http://andydyer.org/categories/conferences/</link>
+    <description>Recent content in Conferences on Andy Dyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2015 Copyright Andy Dyer</copyright>
+    <lastBuildDate>Sun, 08 Feb 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://andydyer.org/categories/conferences/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MCE Conference 2015 - Automated Testing for Modern Android Applications</title>
+      <link>http://andydyer.org/blog/2015/02/08/mce-conference-2015---automated-testing-for-modern-android-applications/</link>
+      <pubDate>Sun, 08 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://andydyer.org/blog/2015/02/08/mce-conference-2015---automated-testing-for-modern-android-applications/</guid>
+      <description>&lt;p&gt;It was an honor to speak at and attend &lt;a href=&#34;http://mceconf.com/&#34;&gt;MCE Conference&lt;/a&gt; in Warsaw last week. I participated in a workshop where I learned about prototyping with Android and Arduinos. I attended talks about Groovy, Kotlin, Proguard, design, scaling apps for emerging markets, and some handy new libraries.&lt;/p&gt;
+
+&lt;p&gt;That alone easily makes MCE one of the best conferences I&amp;rsquo;ve been to. On top of all that, the networking with fellow speakers and attendees was a personal highlight. To everyone I met, I hope to stay in touch until our paths cross again. And I hope you caught up on your sleep!&lt;/p&gt;
+
+&lt;p&gt;Here are the slides from my talk on Android testing. The sample app is available on &lt;a href=&#34;https://github.com/abdyer/android-test-demo&#34;&gt;GitHub&lt;/a&gt;. I previously gave this talk at the Big Android BBQ back in October. In preparation for MCE, I updated the slides and sample app to use Dagger 2 and Espresso 2.&lt;/p&gt;
+
+&lt;p&gt;Testing on Android is still not as easy as it should be, but it is getting better. First class testing support is expected when Dagger 2 is ready for release. I can&amp;rsquo;t wait for the remaining roadblocks to be removed one by one.
+&lt;p/&gt;
+&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;bb843936f2694612853dc525d0a76a75&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>BABBQ5 - Automated Testing for Modern Android Applications</title>
+      <link>http://andydyer.org/blog/2014/10/17/babbq5---automated-testing-for-modern-android-applications/</link>
+      <pubDate>Fri, 17 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://andydyer.org/blog/2014/10/17/babbq5---automated-testing-for-modern-android-applications/</guid>
+      <description>&lt;p&gt;This is my third year to attend and present at the &lt;a href=&#34;http://www.bigandroidbbq.com/&#34;&gt;Big Android BBQ&lt;/a&gt;. &lt;a href=&#34;http://news.bigandroidbbq.com/2014/09/speaker-spotlight-andrew-dyer.html&#34;&gt;My talk&lt;/a&gt; this year showed how to prepare an Android app for automated testing using mocking, dependency injection, and Google&amp;rsquo;s super fast Espresso test runner. You can find the presentation on &lt;a href=&#34;https://speakerdeck.com/abdyer/babbq5-automated-testing-for-modern-android-applications&#34;&gt;Speaker Deck&lt;/a&gt; and the sample code on &lt;a href=&#34;https://github.com/abdyer/android-test-demo&#34;&gt;GitHub&lt;/a&gt;.
+&lt;br/&gt;
+&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;10d2c2b039470132e0fd3e50d861d083&#34; data-ratio=&#34;1.77777777777778&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Droidcon Berlin 2014: Froyo to KitKat</title>
+      <link>http://andydyer.org/blog/2014/05/09/droidcon-berlin-2014-froyo-to-kitkat/</link>
+      <pubDate>Fri, 09 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://andydyer.org/blog/2014/05/09/droidcon-berlin-2014-froyo-to-kitkat/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m thrilled to be speaking at Droidcon Berlin this year. I fell in love with the city on my first visit and the conference was a perfect reason for another visit. Attempts to try out my very basic German skills have shown me that I have a long way to go. However, I am proud to say that I have managed to make a few purchases without panicking and falling back to English.&lt;/p&gt;
+
+&lt;p&gt;The slides are available on &lt;a href=&#34;https://drive.google.com/file/d/0B7Daz4FEcG6DZHUtVXk3TWl2VjA/edit?usp=sharing&#34;&gt;Google Drive&lt;/a&gt;. Watch out world, I&amp;rsquo;m an &amp;ldquo;international speaker&amp;rdquo; now. ;)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Presenting: Wrist Presenter for Android and the Pebble Smartwatch</title>
+      <link>http://andydyer.org/blog/2014/03/07/presenting-wrist-presenter-for-android-and-the-pebble-smartwatch/</link>
+      <pubDate>Fri, 07 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://andydyer.org/blog/2014/03/07/presenting-wrist-presenter-for-android-and-the-pebble-smartwatch/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://andydyer.org/images/wristpresenter_icon@2x.png&#34; alt=&#34;Wrist Presenter&#34; style=&#34;width: 150px; float: left; margin-right: 20px&#34; /&gt;
+Shortly after getting a Pebble Smartwatch this past Christmas, my coworker and all-around-cool-dude &lt;a href=&#34;http://matthewmorey.com/&#34;&gt;Matthew Morey&lt;/a&gt; asked me if I&amp;rsquo;d be interested in developing the Android version of his &lt;a href=&#34;http://matthewmorey.com/wrist-presenter/&#34;&gt;Wrist Presenter iOS app&lt;/a&gt;. Luckily, he already had a rock solid Pebble app developed, so I didn&amp;rsquo;t have to flex my meager C programming skills.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://wristpresenter.com/&#34;&gt;Wrist Presenter&lt;/a&gt; turns your Pebble Smartwatch into a remote for presentations running on your Android or iOS device.&lt;/p&gt;
+
+&lt;p&gt;The Android app connects to your Google Drive account(s) and displays a list of presentations. Selecting a presentation launches it full screen on your Android device and the companion app on the Pebble. In addition to Google Drive Presentations, raw image slides are also supported and even work without a network connection. This makes it possible to use your presentations at conferences where network connectivity is often poor to nonexistent.&lt;/p&gt;
+
+&lt;p&gt;Chromecast support may be added in the future if Google or &lt;a href=&#34;http://www.androidpolice.com/2014/03/05/koush-updates-mirror-with-super-beta-support-for-chromecast-screen-mirroring-currently-for-rooted-nexus-5-only/&#34;&gt;Koush&lt;/a&gt; don&amp;rsquo;t enable full screen mirroring before then. At the moment, you can connect your Android device to a projector with a &lt;a href=&#34;http://www.amazon.com/gp/product/B00H2D3N0M/ref=as_li_qf_sp_asin_il?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=9325&amp;amp;creativeASIN=B00H2D3N0M&amp;amp;linkCode=as2&amp;amp;tag=slacod-20&#34;&gt;Miracast dongle&lt;/a&gt; or an &lt;a href=&#34;http://www.kanexlive.com/slimport&#34;&gt;HDMI adapter&lt;/a&gt; on compatible devices.&lt;/p&gt;
+
+&lt;p&gt;I look forward to upping my &amp;ldquo;geek cred&amp;rdquo; with Wrist Presenter at conferences this year. The app is free to try and unlimited slides can be unlocked via an in-app purchase.&lt;/p&gt;
+
+&lt;p&gt;Wrist Presenter is available on &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.dandydev.wristpresenter&#34;&gt;Google Play&lt;/a&gt; and the &lt;a href=&#34;https://itunes.apple.com/us/app/wrist-presenter-wireless-presentation/id735128848?mt=8&amp;amp;amp;at=10l6oV&amp;amp;amp;ct=mm_wrist-presenter&#34;&gt;Apple App Store&lt;/a&gt;. Download now and let us know what you think.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;div style=&#34;text-align: center&#34;&gt;
+    &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.dandydev.wristpresenter&#34; title=&#34;Download Wrist Presenter Android app for free&#34;&gt;
+        &lt;img alt=&#34;Get it on Google Play&#34; width=&#34;203&#34; src=&#34;http://andydyer.org/images/google_play_badge@2x.png&#34;&gt;
+    &lt;/a&gt;
+    &lt;a href=&#34;https://itunes.apple.com/us/app/wrist-presenter-wireless-presentation/id735128848?mt=8&amp;amp;at=10l6oV&amp;amp;ct=mm_wrist-presenter&#34; title=&#34;Download Wrist Presenter iOS app for free&#34;&gt;
+        &lt;img src=&#34;http://andydyer.org/images/app_store_badge@2x.png&#34; width=&#34;203&#34; alt=&#34;Download Wrist Presenter on the App Store badge&#34;&gt;
+    &lt;/a&gt;
+&lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>TechStreet Houston: Intro to Android Programming</title>
+      <link>http://andydyer.org/blog/2013/11/20/techstreet-houston-intro-to-android-programming/</link>
+      <pubDate>Wed, 20 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://andydyer.org/blog/2013/11/20/techstreet-houston-intro-to-android-programming/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m giving another Intro to Android Programming talk at &lt;a href=&#34;http://www.techstreethouston.com/&#34;&gt;TechStreet Houston&lt;/a&gt; today. The slides are very similar to my previous talk at Houston TechFest, but &lt;a href=&#34;https://docs.google.com/presentation/d/1r6jf2VPOETDOR7TcFGw_qPymbYOEfmaDGC5v2Hib31o/edit?usp=sharing&#34;&gt;here is the link&lt;/a&gt; for today&amp;rsquo;s presentation.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Things I Learned at Big Android BBQ 2013</title>
+      <link>http://andydyer.org/blog/2013/10/13/things-i-learned-at-big-android-bbq-2013/</link>
+      <pubDate>Sun, 13 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://andydyer.org/blog/2013/10/13/things-i-learned-at-big-android-bbq-2013/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;T-Mobile reception is still terrible at the conference center.&lt;/li&gt;
+&lt;li&gt;Alcohol purchases spike in the City of Hurst as a result of the conference.&lt;/li&gt;
+&lt;li&gt;The guys from &lt;a href=&#34;http://www.willowtreeapps.com/&#34;&gt;Willow Tree Apps&lt;/a&gt; have released some awesome Android open source libraries (&lt;a href=&#34;https://github.com/derekbrameyer/android-betterpickers&#34;&gt;BetterPickers&lt;/a&gt;, &lt;a href=&#34;https://github.com/willowtreeapps/OAK&#34;&gt;OAK&lt;/a&gt;, and &lt;a href=&#34;https://github.com/JonathanNye/rpatch&#34;&gt;RPatch&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s worth the short drive to &lt;a href=&#34;http://rootscoffeehouse.com/north-richland-hills/&#34;&gt;Roots Coffee&lt;/a&gt; each morning.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.highrollerusa.com/shop/&#34;&gt;High Roller&lt;/a&gt; makes adult size big wheels. They are a ton of fun to ride.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.oppo.com/&#34;&gt;Oppo&lt;/a&gt; makes some pretty sweet phones. Their &lt;a href=&#34;http://www.theverge.com/2013/9/23/4762618/oppo-n1-announced-cyanogenmod-android-rotating-camera&#34;&gt;N1 will ship with&lt;/a&gt; &lt;a href=&#34;http://www.cyanogenmod.org/&#34;&gt;CyanogenMod&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;I wish I had signed up for the &lt;a href=&#34;http://www.google.com/glass/start/how-to-get-one/&#34;&gt;Google Glass Explorer&lt;/a&gt; program.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://plus.google.com/112937922652870132700&#34;&gt;Daniel Ward&lt;/a&gt; bears a &lt;a href=&#34;https://lh3.googleusercontent.com/-y68HoUyN5-Y/Uln1HvB7fRI/AAAAAAAARcw/D--lqBnDrJg/w852-h474/daniel-obiwan.jpg&#34;&gt;strong resemblance&lt;/a&gt; to Ewan McGregor&amp;rsquo;s Obi Wan Kenobi.&lt;/li&gt;
+&lt;li&gt;Google makes Android. Anyone who attended the closing keynote/panel will understand why this is funny.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://plus.google.com/111558319297322546031&#34;&gt;Ray Walters&amp;rsquo;&lt;/a&gt; BBQ: OMG. So good!&lt;/li&gt;
+&lt;li&gt;Agile is dead. Liquid will soon be the new hotness. More on this later.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I thoroughly enjoyed the conference once again this year. I highly recommend it to anyone who has anything to do with Android.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Big Android BBQ 2013 - Android Open Source Libraries You Need in Your Life</title>
+      <link>http://andydyer.org/blog/2013/10/11/big-android-bbq-2013---android-open-source-libraries-you-need-in-your-life/</link>
+      <pubDate>Fri, 11 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://andydyer.org/blog/2013/10/11/big-android-bbq-2013---android-open-source-libraries-you-need-in-your-life/</guid>
+      <description>&lt;p&gt;This is my second year to speak at the &lt;a href=&#34;http://www.bigandroidbbq.com/&#34;&gt;Big Android BBQ&lt;/a&gt; in Hurst, TX. My talk covered a slew of handy open source libraries to accelerate the development of modern Android applications.&lt;/p&gt;
+
+&lt;p&gt;The slides are available on &lt;a href=&#34;https://docs.google.com/file/d/0B7Daz4FEcG6Dbkx2RGVjYTNvaUE/edit?usp=sharing&#34;&gt;Google Drive&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m having a blast at the conference. The sessions so far have been great. I hope to see all of you here again next year!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Houston TechFest: Intro to Android Programming</title>
+      <link>http://andydyer.org/blog/2013/09/28/houston-techfest-intro-to-android-programming/</link>
+      <pubDate>Sat, 28 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://andydyer.org/blog/2013/09/28/houston-techfest-intro-to-android-programming/</guid>
+      <description>&lt;p&gt;I gave an Intro to Android Programming presentation today at &lt;a href=&#34;http://www.houstontechfest.org/SitePages/Home.aspx&#34;&gt;Houston TechFest&lt;/a&gt;. The slides are available on &lt;a href=&#34;https://docs.google.com/presentation/d/1q3m7_DjXpoPtIzOA5eci8JLLeNnwGsTQRrd7Aj8TofM/edit?usp=sharing&#34;&gt;Google Drive&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thanks to everyone who attended. Keep Android trill!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
