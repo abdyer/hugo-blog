@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deutsch Uhr on Andy Dyer</title>
+    <link>http://andydyer.org/categories/deutsch-uhr/</link>
+    <description>Recent content in Deutsch Uhr on Andy Dyer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2015 Copyright Andy Dyer</copyright>
+    <lastBuildDate>Sat, 12 Jul 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://andydyer.org/categories/deutsch-uhr/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Fun with Android Wear</title>
+      <link>http://andydyer.org/blog/2014/07/12/fun-with-android-wear/</link>
+      <pubDate>Sat, 12 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://andydyer.org/blog/2014/07/12/fun-with-android-wear/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://andydyer.org/images/deutschuhr_androidwear.png&#34; alt=&#34;Deutsch Uhr&#34; style=&#34;width: 140px; float: left; margin-right: 20px&#34; /&gt;I got my &lt;a href=&#34;https://play.google.com/store/devices/details?id=lg_g_watch_black&#34;&gt;LG G Android Wear&lt;/a&gt; smart watch earlier this week and dove right into developing for it.&lt;/p&gt;
+
+&lt;p&gt;My first project was &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.dandydev.deutschuhr&#34;&gt;Deutsch Uhr&lt;/a&gt;, a text-based German language watch face inspired by &lt;a href=&#34;https://www.google.com/url?q=http://www.mypebblefaces.com/apps/1446/1484/&amp;amp;sa=D&amp;amp;usg=AFQjCNHn1MUA0IUtwhRwqFGHYKorEIcmLg&#34;&gt;my favorite Pebble watch face&lt;/a&gt;. I had fun adding animations for the hour/minute/day changes and learning what makes a Wear app tick (pun intended, I always do). A big thanks to my friend Daniel Ward for help getting started. Be sure to check out his &lt;a href=&#34;http://phandroid.com/2014/07/06/custom-android-wear-watch-faces-binary-clock/&#34;&gt;Binary Watch Face&lt;/a&gt;, which was the first Android Wear watch face to appear on Google Play a couple weeks ago.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://andydyer.org/images/wristpresenter_androidwear_next.png&#34; alt=&#34;Wrist Presenter&#34; style=&#34;width: 140px; float: right; margin-left: 10px&#34; /&gt;&lt;img src=&#34;http://andydyer.org/images/wristpresenter_androidwear.png&#34; alt=&#34;Wrist Presenter&#34; style=&#34;width: 140px; float: right; margin-left: 20px&#34; /&gt;I also released an update to &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.dandydev.wristpresenter&#34;&gt;Wrist Presenter for Android&lt;/a&gt; that adds Android Wear support. Combined with the &lt;a href=&#34;http://chrome.blogspot.com/2014/07/mirror-your-android-screen-to-tv-with.html&#34;&gt;Chromecast screen mirroring&lt;/a&gt; Google rolled out this week, the app should meet the needs of any Android-toting presenter. Way cool.&lt;/p&gt;
+
+&lt;p&gt;The Pebble significantly reduced the need for me to pull out my phone for texts, calendar reminders, etc., but Android Wear has gone even further. How? While cooking in the kitchen, I tapped the watch screen and said &amp;ldquo;OK Google, set a timer for 10 minutes&amp;rdquo;. When the timer went off, I simply swiped it to dismiss. This also works for scheduling reminders. At the grocery store, my shopping list is on my wrist. Replying to a text message by talking to my watch makes me smile every time. And finally, I look forward to using Google Maps navigation on my watch when trying to find my way while traveling.&lt;/p&gt;
+
+&lt;p&gt;The future is now, kids.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

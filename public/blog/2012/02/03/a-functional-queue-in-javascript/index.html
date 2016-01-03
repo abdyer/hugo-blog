@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>A Functional Queue in JavaScript</title>
+  <link href="http://andydyer.org/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="http://andydyer.org/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style type="text/css">
+  
+    footer.page-footer{background-image: url(http://andydyer.org/images/default.png);}
+  
+  </style>
+</head>
+<body>
+  <ul id="slide-out" class="side-nav">
+    <li><a href="http://andydyer.org"><i class="mdi-action-home left"></i>Home<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://andydyer.org/categories"><i class="mdi-action-perm-media left"></i>Categories<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <li><a href="http://andydyer.org/tags"><i class="mdi-action-loyalty left"></i>Tags<i class="mdi-hardware-keyboard-arrow-right right"></i></a></li>
+    <hr>
+    <li><a href="http://andydyer.org/bands-ive-seen-live">Bands I've Seen Live</a>
+  </ul>
+  <div id="index-banner" class="parallax-container">
+  <a data-activates="slide-out" class="btn-floating button-collapse" style="top: 5px; left: 5px;"><i class="mdi-navigation-menu"></i></a>
+    <div class="section no-pad-bot">
+      <div class="container">
+        
+        <a href="http://andydyer.org/">
+          <img class="gravatar" src="http://www.gravatar.com/avatar/e0ac1256093c733a5d5a26085b90966f?s=120" />
+          <h1 class="header center teal-text text-lighten-2">Andy Dyer</h1>
+        </a>
+        <div class="row center">
+          <h5 class="header col s12 light">Android developer. Beer &amp; coffee snob. Cultivator of beard. Ich lerne Deutsch.</h5>
+        </div>
+        <div class="row center">
+        
+          <a href="https://github.com/abdyer"><img src="http://andydyer.org/images/github2-dreamstale35.png"></a>
+        
+        
+        
+          <a href="https://twitter.com/dammitandy"><img src="http://andydyer.org/images/twitter-dreamstale71.png"></a>
+        
+        
+          <a href="https://google.com/+AndrewDyer"><img src="http://andydyer.org/images/gplus48x48.png"></a>
+        
+        
+          <a href="https://www.linkedin.com/in/abdyer"><img src="http://andydyer.org/images/linkedin-dreamstale45.png"></a>
+        
+          <a href="http://andydyer.org/index.xml"><img src="http://andydyer.org/images/feed-dreamstale27.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+    
+      <img src="http://andydyer.org/images/default.png">
+    
+    </div>
+  </div>
+
+
+
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h4>A Functional Queue in JavaScript</h4>
+          <p>
+          
+            
+              <a href="http://andydyer.org/categories/functional-programming/">Functional Programming</a>
+            
+              <a href="http://andydyer.org/categories/javascript/">JavaScript</a>
+            
+           
+          </p>
+          <p><p>
+It's been over a year since I've posted here, but I've been busy delving into Android and Ruby on Rails among other things. To get back into blogging (hopefully more regularly...we'll see), I thought I'd share an interesting JavaScript exercise I was asked to complete as part of a job interview recently.
+</p>
+<p>
+The task was to build a functional queue in JavaScript.  A functional queue is a queue (first in, first out) which is implemented with no side-effects.  For instance, a function to enqueue a value onto an existing queue will return a new object which represents the larger queue.  The original (smaller) queue is still available.
+</p>
+<p>
+In order to implement a functional queue, we need to be able to do a few things that are not immediately obvious in Javascript:
+</p>
+<ol>
+	<li>Create a new instance of the array of queue items when an item is enqueued/dequeued</li>
+	<li>Overload the class constructor so it can be created with an empty array (new queue) or an existing array (result of a enqueue/dequeue operation</li>
+	<li>Return both the dequeued item and a new queue as a result of a dequeue operation</li>
+</ol>
+<p>
+To return a new instance of the array of queue items, we can leverage the <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/slice">array.slice()</a> method, which selects part of an array and returns a new array.  The trick here is to pass an index of zero to the slice method to get a new array instance and then use <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/push">array.push()</a> to enqueue or <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/shift">array.shift()</a> to dequeue.
+</p>
+<p>
+To overload the class constructor, we can use the <a href="https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope/arguments">arguments array</a> to pass an existing array and create a new one if none is passed.
+</p>
+<p>
+Finally, to return both the dequeued item and a new queue as a single result, we can use an <a href="https://developer.mozilla.org/en/JavaScript/Guide/Values,_Variables,_and_Literals#Object_literals">object literal</a>.
+</p>
+The finished product looks like this:
+<pre>var Queue = function() {
+	var items = arguments.length &gt; 0 ? arguments[0] : new Array();
+
+	return {
+		length: function() {
+			return items.length;
+		},
+		isEmpty: function() {
+			return this.length() == 0;
+		},
+		enqueue: function(item) {
+			var newItems = items.slice(0);
+			newItems.push(item);
+			return new Queue(newItems);
+		},
+		dequeue: function() {
+			var newItems = items.slice(0);
+			var item = newItems.shift();
+			return {
+				queue: new Queue(newItems),
+				value: item
+			};
+		},
+		head: function() {
+			return items[0];
+		}
+	};
+}</pre>
+</p>
+          <p>3 Feb 2012
+            
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://andydyer.org/blog/2012/09/25/setting-item-selected-state-in-android-gridview/"><i class="mdi-navigation-arrow-back"></i></a>
+      
+      </div>
+      <div class="col s6 m10 center">&nbsp</div>
+      <div class="col s3 m1">
+      
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://andydyer.org/blog/2010/12/28/my-top-10-albums-of-2010/"><i class="mdi-navigation-arrow-forward"></i></a>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      © 2015 Copyright Andy Dyer
+      <div class="right">Design <a class="grey-text text-lighten-4" href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="http://andydyer.org/js/materialize.min.js"></script>
+  <script src="http://andydyer.org/js/init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-48421946-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+
+  </body>
+</html>
+
