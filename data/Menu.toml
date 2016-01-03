@@ -1,0 +1,14 @@
+[1_android]
+    Name = "Android"
+    Title = "Blog posts about Android"
+    URL = "/categories/android"
+
+[2_speaking]
+    Name = "Speaking"
+    Title = "Talks I've given at conferences and meetups"
+    URL = "/categories/speaking"
+
+[3_concerts]
+    Name = "Bands I've Seen Live"
+    Title = "A fairly exhaustive list of the concerts I've seen"
+    URL = "/bands-ive-seen-live"
