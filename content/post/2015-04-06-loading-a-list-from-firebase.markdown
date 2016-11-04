@@ -28,4 +28,4 @@ private Observable<List<Beer>> loadBeers() {
 }
 ```
 
-Aside from this little hiccup, Firebase is hard to beat for easy persistence that automatically syncs across devices. I look forward to seeing what [Google](https://www.firebase.com/blog/"2014-10-21"
+Aside from this little hiccup, Firebase is hard to beat for easy persistence that automatically syncs across devices. I look forward to seeing what [Google](https://firebase.googleblog.com/2014/10/firebase-is-joining-google.html) does with it.
