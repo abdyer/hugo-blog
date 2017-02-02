@@ -141,3 +141,4 @@ I've been thinking for quite some time about trying to compile a list of all the
 1. *Earl Sweatshirt* - Tuesday, September 8, 2015 @ Warehouse Live, Houston, TX
 1. *Run the Jewels* - Tuesday, October 13, 2015 @ House of Blues, Houston, TX
 1. *Fat Tony & Kyle Hubbard* - Friday, October 16, 2015 @ Safe House, Houston, TX
+1. *Vince Staples* - Tuesday, May 17, 2016 @ Warehouse Live, Houston, TX
