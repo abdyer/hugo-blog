@@ -142,3 +142,6 @@ I've been thinking for quite some time about trying to compile a list of all the
 1. *Run the Jewels* - Tuesday, October 13, 2015 @ House of Blues, Houston, TX
 1. *Fat Tony & Kyle Hubbard* - Friday, October 16, 2015 @ Safe House, Houston, TX
 1. *Vince Staples* - Tuesday, May 17, 2016 @ Warehouse Live, Houston, TX
+1. *LVL UP* - Saturday, April 15, 2017 @ Privat Club, Berlin, Germany
+1. *Thee Oh Sees* - Monday, May 8, 2017 @ Columbia Theater, Berlin, Germany
+1. *Ty Segall* - Thursday, August 24, 2017 @ Festaal Kreuzberg, Berlin, Germany
