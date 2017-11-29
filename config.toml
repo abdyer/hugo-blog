@@ -5,7 +5,8 @@ theme = "hyde-y"
 MetaDataFormat = "toml"
 disqusShortname = "andydyerorg"
 copyright = "© 2017 Copyright Andy Dyer"
-canonifyurls = true
+canonifyURLs = true
+relativeURLs = false
 
 [author]
   name = "Andy Dyer"
