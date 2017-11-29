@@ -11,12 +11,12 @@ canonifyurls = true
   name = "Andy Dyer"
 
 [params]
-  description = "Android developer. Beer & coffee snob. Cultivator of beard. Berliner in training."
+  description = "Android & React Native developer. Conference Speaker. Beer & coffee snob. Berliner in training."
 
   # theme specific
   sidebar = "left"
   brand = "Andy Dyer"
-  topline = "Android developer. Beer & coffee snob. Cultivator of beard. Berliner in training."
+  topline = "Android & React Native developer. Conference Speaker. Beer & coffee snob. Berliner in training."
   github = "abdyer"
   twitter = "dammitandy"
   linkedin = "abdyer"
