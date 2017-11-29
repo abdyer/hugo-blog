@@ -3,9 +3,6 @@ layout: post
 title: "Bands I've Seen Live"
 date: "2009-04-19"
 comments: false
-aliases:
- - /blog/2009/04/19/bands-ive-seen-live
- - /bands-ive-seen-live
 categories:
  - Ticketmaster sucks but live music is worth getting robbed
  - Music
