@@ -8,9 +8,23 @@ type = "post"
 
 ### Intro
 
-# [WHY REACT NATIVE]
+When new technologies start gaining momentum in the Android community, the pragmatic (or lazy) among us eventually have to ask ourselves, “Is it worth it?” After the initial arrival and departure of the hype train, some of these become trusted tools we use in almost every app. Think [RxJava](https://github.com/ReactiveX/RxJava) and [Dagger](https://google.github.io/dagger/).
 
-<br/>
+[React Native](https://facebook.github.io/react-native/) may be on its way to earning a place in the same club. Once we get past the fact that JavaScript on Android and HTML in JavaScript seem pretty damn weird at first, there’s a lot to like. Seeing your changes on a device almost instantly is a love-at-first-sight kind of thing. And rethinking your app architecture as a series of actions, state changes, and UI render phases can eliminate a surprising number of silly bugs.
+
+A dive into every new technology starts with the flashy “type these commands and run your ‘Hello World’ app” tutorial. This is not that kind of post. Instead, I’ll recap my experience digging into React Native for real world use. From integrating RN code into an existing Java/Kotlin app to dealing with the kind of problems they never mention in the README, I’ll cover what you need to know to decide if React Native is really worth your time.
+<br/><br/>
+
+### Why React Native?
+
+As I see it, there are four reasons why you might want to consider using React Native:
+
+1. **Fast Iteration** - Hot reloading enables fast iteration as changes show up on an emulator instantly.
+1. **Cross Platform** - Much of the code can be shared between Android and iOS.
+1. **Dynamic Code Updates** - React Native is unique it its ability to push updates to devices without requiring an app release.
+1. **Learning Something New** - Web developers want to build mobile apps and mobile developers want to learn about web development. And some (like myself), want to ease back into web development after focusing on mobile for the last several years.
+<br/><br/>
+
 ### React Architecture
 
 These days, most large Android apps either adhere to the [MVP](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter) or [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) architecture. Models, state changes, and UI logic are kept separated. But how and when the UI is updated is largely up to us to decide on a case by case basis. With React, these decisions have been made for us. Our UI is driven by state changes and that’s pretty much it. State is a first class citizen and the UI is rendered anytime it changes. By breaking the UI into components with a unidirectional data flow, code is organized into small, reusable building blocks following a well defined pattern:
@@ -76,7 +90,7 @@ AppRegistry.registerComponent('SampleProject', () => SampleApp);
 
 At the top of the file, we import the components we want to reference in this file. First we import some React classes, followed by the React Native classes we’ll be using.
 
-Below that, we declare a SampleApp component that extends React’s Component class. Our constructor takes a map of properties passed from the parent, and calls through to `super()`. Then, we initialize our state map with an empty string for the greeting we’ll be displaying.
+Below that, we declare a SampleApp component that extends React’s `Component` class. Our constructor takes a map of properties passed from the parent, and calls through to `super()`. Then, we initialize our state map with an empty string for the greeting we’ll be displaying.
 
 If nothing else, most components will have a `render()` method. Here, we use a hybrid of HTML and Javascript known as JSX to return the view we want to render. In this case, we’re rendering a text input and a greeting based on the value of `this.state.greeting`, or nothing if no text has been entered.
 
@@ -87,13 +101,13 @@ Below our SampleApp component, we define the stylesheet classes you see applied 
 
 ### Integration with Existing Apps
 
-Now that we have a basic understanding of how React apps are architected and how React Native brings that to Android, let’s talk about my experience integrating React Native into an existing app. I won’t cover setting up a new all React Native app from scratch, as there are tutorials and generators that make this pretty straightforward.
+Now that we have a basic understanding of how React apps are architected and how React Native brings that to Android, let’s talk about my experience integrating React Native into an existing app. I won’t cover setting up a new all React Native app from scratch, as there are [tutorials](https://facebook.github.io/react-native/docs/getting-started.html) and [generators](https://github.com/react-community/create-react-native-app) that make this pretty straightforward.
 
-I started by following the [Integration with Existing Apps](https://facebook.github.io/react-native/docs/integration-with-existing-apps.html) tutorial on the React Native documentation site. In a nutshell, this involves running some yarn commands to pull down React Native dependencies, making a few `build.gradle` changes, and adding an Activity to load a “Hello World” Javascript file. There are several steps, but they’re pretty easy to follow. Then we run yarn start to bundle the Javascript (a step replaced by a pre-build task for release builds) and run our app. Simple enough, right?
+I started by following the [Integration with Existing Apps](https://facebook.github.io/react-native/docs/integration-with-existing-apps.html) tutorial on the React Native documentation site. In a nutshell, this involves running some [yarn](https://yarnpkg.com/en/) commands to pull down React Native dependencies, making a few `build.gradle` changes, and adding an Activity to load a “Hello World” Javascript file. There are several steps, but they’re pretty easy to follow. Then we run `yarn start` to bundle the Javascript (a step replaced by a pre-build task for release builds) and run our app. Simple enough, right?
 
-Wrong. When I tried this using v0.45, I encountered my first problem. At that time, React Native was using [OkHttp](http://square.github.io/okhttp/) v3.4 and our app was using a newer version. Between those versions, there were several breaking changes that meant we could not simply force a newer version of the library. For those of you playing conference talk BINGO, there’s your first [Square library](http://square.github.io/) mention.
+Wrong. When I tried this using v0.45, I encountered my first problem. At that time, React Native was using [OkHttp](http://square.github.io/okhttp/) v3.4 and our app was using a newer version. Between those versions, there were several breaking changes that meant we could not simply force a newer version of the library. For those of you playing blog post BINGO, there’s your first [Square library](http://square.github.io/) mention.
 
-But, it’s open source. Surely someone else has had the problem and solved it, right? Correct! There was even a [pull request](https://github.com/facebook/react-native/pull/11835) open to update React Native to v3.8. Let’s take a look at a few key parts of the discussion.
+But, it’s open source. Surely someone else has had the problem and solved it, right? Correct! There was even a [pull request](https://github.com/facebook/react-native/pull/11835) open to update React Native to v3.8. Let’s take a look at a few key parts of the discussion:
 
 <img src="/images/okhttp_pr_fb_app_updates.png" alt="React Native app updates" style="width: 1178px; margin-left: auto; margin-right: auto; display: block" />
 
@@ -109,12 +123,16 @@ So, how might we proceed?
 
 A couple weeks later, OkHttp v3.8 had an issue of its own that required React Native to [downgrade](https://github.com/facebook/react-native/issues/13996) to v3.6! What a rollercoaster!
 
-# [WAYS TO INTEGRATE]
-<br/>
+I've since learned that there a few different ways to integrate React Native dependencies into an existing app:
+
+1. **Add dependencies directly to your app** - Unfortunately, this won't work if your Android and iOS apps are in separate repos. Even if you're cutting-edge enough to be using a monorepo, this approach means every developer on your team has to know about the React Native portion of your codebase.
+1. **Package dependencies in a separate library** - This seems to be the obvious alternative to the first option until you realize that React Native is distributed via [NPM](https://www.npmjs.com/) rather than standard native mechanisms like Maven/Gradle/Cocoa Pods. If you want to go this route, you have to package React Native itself and any libraries with native code manually along with your own React Native features.
+1. **[Electrode Native](https://github.com/electrode-io/electrode-native) from WalmartLabs** - I've spent some time with this and it seems to be the best option. The documentation is very thorough but it takes time and patience to set things up. I plan to share more about my experience soon, but suffice it to say it solves the issues with the previous two approaches in a way that should scale for large distributed teams (because Walmart).
+<br/><br/>
 
 ### The OSS License Drama
 
-On top of that, Facebook also recently [clarified their position](https://code.facebook.com/posts/112130496157735/explaining-react-s-license/) regarding the open source license for React Native. I’m no lawyer, but the license for Facebook open source projects makes them free to use with the stipulation that if you sue them for patent infringement, you lose the license. Does your company do anything that Facebook might do in the future? If so, this is essentially the old mobster line updated for the digital world:
+On top of the integration challenges, Facebook also recently [clarified their position](https://code.facebook.com/posts/112130496157735/explaining-react-s-license/) regarding the open source license for React Native. I’m no lawyer, but the license for Facebook open source projects makes them free to use with the stipulation that if you sue them for patent infringement, you lose the license. Does your company do anything that Facebook might do in the future? If so, this is essentially the old mobster line updated for the digital world:
 
 > Nice app you got there. It would be a shame if anything...happened to it.
 
@@ -122,10 +140,11 @@ There were plenty of rants online about this, while others don’t seem too conc
 
 Either way, this brings us to our first consideration when deciding to use React Native:
 
-# It’s a big dependency and may limit your ability to upgrade other libraries.
-
 <br/>
-Large companies open sourcing things are more focused on their own needs (and rightly so) than the community of developers using their projects. Popular libraries also serve as a recruiting tool. Solving problems for others is a bonus. If your needs are not aligned with the authors (or you expect them to diverge at some point), you should probably not use the library or framework. Of course forking the repo is an option, but doing so for a project of this size is clearly unwise.
+# It’s a big dependency and may limit your ability to upgrade other libraries.
+<br/><br/>
+
+Large companies open sourcing things are more focused on their [own needs](https://www.youtube.com/watch?v=K0NNVm5ajMQ) (and rightly so) than the community of developers using their projects. Popular libraries also serve as a recruiting tool. Solving problems for others is a bonus.
 <br/><br/>
 
 ### Developing with React Native
@@ -154,7 +173,7 @@ export default class SampleApp extends React.Component<Props, State> {
 }
 ```
 
-Getting comfortable with React Native involves a learning curve similar to any large architectural framework like [Dagger](https://google.github.io/dagger/) or language like [Kotlin](https://kotlinlang.org/). For many, working with React Native means learning React and Javascript simultaneously.
+Getting comfortable with React Native involves a learning curve similar to any large architectural framework like Dagger or language like [Kotlin](https://kotlinlang.org/). For many, working with React Native means learning React and Javascript simultaneously.
 <br/><br/>
 
 ### Not-So-Great-Things
@@ -169,22 +188,27 @@ When all else fails, interop with native code is possible, but requires some add
 
 This brings us to our second consideration:
 
-# It’s way different than normal Android development.
-
 <br/>
+# It’s way different than normal Android development.
+<br/><br/>
+
 If you have a team of React or Javascript developers and need to build a mobile app, this may be perfect. However, if you have a team of longtime Android engineers, React Native may be a tougher sell, especially with things like Kotlin going mainstream and increasingly better tooling.
 <br/><br/>
 
 ### Don't Drive Too Fast
 
-As I mentioned in the talk description, one of the killer features of React Native is the ability to change code and see it on a device almost instantly. Or, to put a darker spin on it:
+As I mentioned in the intro, one of the killer features of React Native is the ability to change code and see it on a device almost instantly. Or, to put a darker spin on it:
 
 <img src="/images/bad_app_really_fast.png" alt="Build a bad app really fast" style="width: 725px; margin-left: auto; margin-right: auto; display: block" />
 https://twitter.com/mxcl/status/883159808643395588
 
 Trying to build too much too quickly with any technology before having a solid grasp of the fundamentals can lead to technical debt. Luckily, there are tons of great tutorials and books available to guide you.
 
-# [TESTING]
+One proven way to ensure quality code is to test as much of it as possible. There are a few frameworks that help us with this on React Native:
+
+1. **[Jest](https://facebook.github.io/jest/docs/en/tutorial-react-native.html)** - Snapshot & unit testing. React Native apps have this configured out of the box.
+1. **[Detox](https://github.com/wix/detox)** - [Espresso](https://developer.android.com/training/testing/espresso/index.html) like UI testing. Also known as end-to-end or gray box testing, Detox runs your tests on an emulator so you can validate what the user actually sees.
+1. **[Enzyme](https://github.com/airbnb/enzyme)** - Shallow rendering means tests can run a bit faster than Jest with a more flexible API.
 <br/><br/>
 
 ### Cross Platform
@@ -195,13 +219,13 @@ There are a couple ways to specify platform specific behavior. First, we can use
 
 This brings us to our third consideration when deciding to use React Native:
 
-# Clean and maintainable cross-platform code requires the commitment of everyone on the team.
-
 <br/>
+# Clean and maintainable cross-platform code requires the commitment of everyone on the team.
+<br/><br/>
 
 ### Dynamic Code Updates
 
-Another feature of React Native that is not available to traditional Android apps is dynamic code updates via Microsoft’s [Code Push](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/) service. With Code Push, you can deploy updated Javascript code to your users without deploying a full app update to Google Play or the Apple App Store. This means bug fixes and new features can get to your users as quickly as possible. While this sounds too good to be true for anyone familiar with Apple’s stringent review process or anyone who’s received one of those scary automated terms violations emails from Google Play, the FAQ on the Code Push site assures us everything’s cool:
+Another feature of React Native that is not available to traditional Android apps is dynamic code updates via Microsoft’s [Code Push](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/) service. With Code Push, you can deploy updated Javascript code to your users without deploying a full app update to Google Play or the Apple App Store. This means bug fixes and new features can get to your users as quickly as possible. While this sounds too good to be true for anyone familiar with Apple’s stringent review process or anyone who’s received one of those scary automated terms violations emails from Google Play, the [FAQ](https://microsoft.github.io/code-push/faq/index.html) on the Code Push site assures us everything’s cool:
 
 > According to section 3.3.2 of Apple’s developer agreement, as long as you are using the CodePush service to release bug fixes and improvements/features that maintain the app’s original/presented purpose (i.e. don’t CodePush a calculator into a first-person shooter), then you will be fine, and your users will be happy. In order to provide a tangible example, our team published a (pretty cheesy!) CodePush-ified game to the Google Play Store and Apple App Store, and had no problems getting it through the review process.
 
@@ -211,9 +235,9 @@ I’ve only given Code Push a test drive so far, but it was enough for me to be 
 
 This brings us to our fourth and final point to consider before adopting React Native:
 
-# Dynamic code updates are a game changer, but should be used responsibly.
-
 <br/>
+# Dynamic code updates are a game changer, but should be used responsibly.
+<br/><br/>
 
 ### A React Native UI with Existing Native Code
 
@@ -260,7 +284,7 @@ class BeerLiveDataModule : ReactContextBaseJavaModule {
 }
 ```
 
-First, on the native side, we create a `BeerLiveDataModule` that exposes a `subscribe()` and an `unsubscribe()` method to React Native. Both of these methods are annotated with `@ReactMethod`, which indicates that we want to expose them to JavaScript. When `subscribe()` is called, we start observing our BeerRepository’s LiveData. As you probably guessed, when `unsubscribe()` is called, we do the opposite. Any time LiveData emits an update, we post an event to Javascript via React’s device event emitter. You could certainly do something similar with RxJava as well.
+First, on the native side, we create a `BeerLiveDataModule` that exposes a `subscribe()` and an `unsubscribe()` method to React Native. Both of these methods are annotated with `@ReactMethod`, which indicates that we want to expose them to JavaScript. When `subscribe()` is called, we start observing our `BeerRepository`’s LiveData. As you probably guessed, when `unsubscribe()` is called, we do the opposite. Any time LiveData emits an update, we post an event to Javascript via React’s device event emitter. You could certainly do something similar with RxJava as well.
 
 Once we have our native module ready, we register it in our app’s `ReactPackage` class, which we created when we integrated React Native into our app.
 
