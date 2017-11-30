@@ -7,3 +7,8 @@
     Name = "Speaking"
     Title = "Talks I've given at conferences and meetups"
     URL = "/categories/speaking"
+
+[3_concerts] 
+    Name = "Bands I've Seen Live"
+    Title = "A fairly exhaustive list of the concerts I've seen"
+    URL = "/blog/2009/04/19/bands-ive-seen-live"

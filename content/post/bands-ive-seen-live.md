@@ -1,13 +1,11 @@
----
-layout: post
-title: "Bands I've Seen Live"
-date: "2009-04-19"
-comments: false
-categories:
- - Ticketmaster sucks but live music is worth getting robbed
- - Music
- - I go to a lot of concerts
----
++++
+author = "Andy Dyer"
+date = "2009-04-19T9:12:31"
+categories = ["Ticketmaster sucks but live music is worth getting robbed", "Music", "I go to a lot of concerts"]
+title = "Bands I've Seen Live"
+type = "post"
+comments = false
++++
 
 I've been thinking for quite some time about trying to compile a list of all the bands I've seen live over the years.  I'll put these in order as much as possible.  I plan to keep adding to this as I recall past shows and attend more in the future.  I have a ticket stub book, so I'll include the dates and other details for those I have.  Some of these are special in that the bands have since split up, are no longer touring, and/or some members have passed away.  You can find videos from a lot of these shows on my [YouTube](http://www.youtube.com/dammitandy) channel.  Here we go:
 
