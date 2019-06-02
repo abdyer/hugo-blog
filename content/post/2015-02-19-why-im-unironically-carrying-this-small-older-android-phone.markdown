@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Why I'm Unironically Carrying This Small, Older Android Phone"
 date: "2015-02-19"
 comments: true

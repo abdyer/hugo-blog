@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Android's Material Design and The Bauhaus"
 date: "2014-07-13"
 comments: true

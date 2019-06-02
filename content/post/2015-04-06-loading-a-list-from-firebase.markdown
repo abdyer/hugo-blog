@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Loading a List of Objects from Firebase"
 date: "2015-04-06"
 comments: true

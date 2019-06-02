@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Things I Learned at Big Android BBQ 2013"
 date: "2013-10-13"
 comments: true

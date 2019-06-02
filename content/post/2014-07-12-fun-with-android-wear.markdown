@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Fun with Android Wear"
 date: "2014-07-12"
 comments: true

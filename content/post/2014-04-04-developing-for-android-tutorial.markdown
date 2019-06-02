@@ -1,7 +1,6 @@
 ---
-layout: post
+type: post
 title: "Developing for Android Tutorial"
-description: Wrist Presenter turns your Pebble Smartwatch into a remote for presentations running on your Android or iOS device.
 date: "2014-04-04"
 comments: true
 categories: [Android, Speaking]

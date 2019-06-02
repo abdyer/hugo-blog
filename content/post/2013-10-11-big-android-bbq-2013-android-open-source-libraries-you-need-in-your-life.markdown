@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Big Android BBQ 2013 - Android Open Source Libraries You Need in Your Life"
 date: "2013-10-11"
 comments: true

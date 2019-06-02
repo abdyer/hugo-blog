@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "The Time I Interviewed at Google"
 date: "2015-06-09"
 comments: true

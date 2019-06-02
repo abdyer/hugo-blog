@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Signing Volley Requests with Scribe"
 date: "2013-12-15"
 comments: true

@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "MCE Conference 2015 - Automated Testing for Modern Android Applications"
 date: "2015-02-08"
 comments: true

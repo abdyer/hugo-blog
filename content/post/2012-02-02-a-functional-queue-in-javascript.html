@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: A Functional Queue in JavaScript
 date: "2012-02-03"
 categories:
@@ -10,30 +10,47 @@ status: publish
 type: post
 published: true
 meta:
-  _elasticsearch_indexed_on: "2012-02-03"
+_elasticsearch_indexed_on: "2012-02-03"
 ---
 <p>
-It's been over a year since I've posted here, but I've been busy delving into Android and Ruby on Rails among other things. To get back into blogging (hopefully more regularly...we'll see), I thought I'd share an interesting JavaScript exercise I was asked to complete as part of a job interview recently.
+	It's been over a year since I've posted here, but I've been busy delving into Android and Ruby on Rails among other
+	things. To get back into blogging (hopefully more regularly...we'll see), I thought I'd share an interesting
+	JavaScript exercise I was asked to complete as part of a job interview recently.
 </p>
 <p>
-The task was to build a functional queue in JavaScript.  A functional queue is a queue (first in, first out) which is implemented with no side-effects.  For instance, a function to enqueue a value onto an existing queue will return a new object which represents the larger queue.  The original (smaller) queue is still available.
+	The task was to build a functional queue in JavaScript.  A functional queue is a queue (first in, first out) which
+	is implemented with no side-effects.  For instance, a function to enqueue a value onto an existing queue will return
+	a new object which represents the larger queue.  The original (smaller) queue is still available.
 </p>
 <p>
-In order to implement a functional queue, we need to be able to do a few things that are not immediately obvious in Javascript:
+	In order to implement a functional queue, we need to be able to do a few things that are not immediately obvious in
+	Javascript:
 </p>
 <ol>
 	<li>Create a new instance of the array of queue items when an item is enqueued/dequeued</li>
-	<li>Overload the class constructor so it can be created with an empty array (new queue) or an existing array (result of a enqueue/dequeue operation</li>
+	<li>Overload the class constructor so it can be created with an empty array (new queue) or an existing array (result
+		of a enqueue/dequeue operation</li>
 	<li>Return both the dequeued item and a new queue as a result of a dequeue operation</li>
 </ol>
 <p>
-To return a new instance of the array of queue items, we can leverage the <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/slice">array.slice()</a> method, which selects part of an array and returns a new array.  The trick here is to pass an index of zero to the slice method to get a new array instance and then use <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/push">array.push()</a> to enqueue or <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/shift">array.shift()</a> to dequeue.
+	To return a new instance of the array of queue items, we can leverage the <a
+		href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/slice">array.slice()</a> method,
+	which selects part of an array and returns a new array.  The trick here is to pass an index of zero to the slice
+	method to get a new array instance and then use <a
+		href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/push">array.push()</a> to
+	enqueue or <a
+		href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/shift">array.shift()</a> to
+	dequeue.
 </p>
 <p>
-To overload the class constructor, we can use the <a href="https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope/arguments">arguments array</a> to pass an existing array and create a new one if none is passed.
+	To overload the class constructor, we can use the <a
+		href="https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope/arguments">arguments
+		array</a> to pass an existing array and create a new one if none is passed.
 </p>
 <p>
-Finally, to return both the dequeued item and a new queue as a single result, we can use an <a href="https://developer.mozilla.org/en/JavaScript/Guide/Values,_Variables,_and_Literals#Object_literals">object literal</a>.
+	Finally, to return both the dequeued item and a new queue as a single result, we can use an <a
+		href="https://developer.mozilla.org/en/JavaScript/Guide/Values,_Variables,_and_Literals#Object_literals">object
+		literal</a>.
 </p>
 The finished product looks like this:
 <pre>var Queue = function() {

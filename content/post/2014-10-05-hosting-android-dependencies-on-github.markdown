@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Hosting Android Dependencies on GitHub"
 date: "2014-10-05"
 comments: true

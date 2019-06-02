@@ -1,7 +1,6 @@
 ---
-layout: post
+type: post
 title: "Droidcon Berlin 2014: Froyo to KitKat"
-description: "My Droidcon Berlin 2014 presentation."
 date: "2014-05-09"
 comments: true
 categories: [Android, Conferences, Droidcon Berlin]

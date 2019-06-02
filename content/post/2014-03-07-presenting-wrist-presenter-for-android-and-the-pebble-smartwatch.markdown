@@ -1,7 +1,6 @@
 ---
-layout: post
+type: post
 title: "Presenting: Wrist Presenter for Android and the Pebble Smartwatch"
-description: Wrist Presenter turns your Pebble Smartwatch into a remote for presentations running on your Android or iOS device.
 date: "2014-03-07"
 comments: true
 categories: [Android, Pebble, Apps, Wrist Presenter, Conferences, Speaking]

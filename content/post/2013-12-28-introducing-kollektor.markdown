@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Introducing Kollektor"
 date: "2013-12-28"
 comments: true

@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Music Library 3.0 - Material Design Update"
 date: "2014-11-02"
 comments: true

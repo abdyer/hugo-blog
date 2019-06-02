@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Running Shell Commands with Gradle and a Better Way to Delombok"
 date: "2015-01-22"
 comments: true

@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Using a Third Party FAB with CoordinatorLayout"
 date: "2015-06-28"
 comments: true

@@ -1,7 +1,6 @@
 ---
-layout: post
+type: post
 title: "Google I/O 2014: An Android Developer's Perspective"
-description: This year’s Google I/O developer conference once again gave developers plenty to be excited about.
 date: "2014-06-28"
 comments: true
 categories: [Android, Google I/O, ChaiOne blog]

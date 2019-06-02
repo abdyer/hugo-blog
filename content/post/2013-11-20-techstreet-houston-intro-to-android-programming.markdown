@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "TechStreet Houston: Intro to Android Programming"
 date: "2013-11-20"
 comments: true

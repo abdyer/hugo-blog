@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "BABBQ5 - Automated Testing for Modern Android Applications"
 date: "2014-10-17"
 comments: true

@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Surprised this domain was available"
 date: "2013-07-14"
 comments: true

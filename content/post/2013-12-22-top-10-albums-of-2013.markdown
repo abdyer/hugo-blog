@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Top 10 Albums of 2013"
 date: "2013-12-22"
 comments: true

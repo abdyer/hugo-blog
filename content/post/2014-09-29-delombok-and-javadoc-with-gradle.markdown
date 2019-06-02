@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Delombok and Javadoc with Gradle"
 date: "2014-09-29"
 comments: true

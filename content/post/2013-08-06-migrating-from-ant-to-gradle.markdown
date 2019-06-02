@@ -1,5 +1,5 @@
 ---
-layout: post
+type: post
 title: "Migrating from Ant to Gradle"
 date: "2013-08-06"
 comments: true
