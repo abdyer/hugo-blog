@@ -12,12 +12,12 @@ relativeURLs = false
   name = "Andy Dyer"
 
 [params]
-  description = "Mobile developer (mostly Android). Conference speaker. Beer & coffee snob. Berliner in training."
+  description = "Android [@ZalandoTech](https://twitter.com/zalandotech), editor [@ProAndroidDev](https://twitter.com/proandroiddev), occasional conference speaker. Beer & coffee snob. Berliner in training."
 
   # theme specific
   sidebar = "left"
   brand = "Andy Dyer"
-  topline = "Mobile developer (mostly Android). Conference speaker. Beer & coffee snob. Berliner in training."
+  topline = "Android [@ZalandoTech](https://twitter.com/zalandotech), editor [@ProAndroidDev](https://twitter.com/proandroiddev), occasional conference speaker. Beer & coffee snob. Berliner in training."
   github = "abdyer"
   twitter = "dammitandy"
   linkedin = "abdyer"
