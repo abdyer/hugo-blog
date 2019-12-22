@@ -144,3 +144,7 @@ I've been thinking for quite some time about trying to compile a list of all the
 1. **Nothing** - Thursday, November 15, 2018 @ Cassiopeia, Berlin, Germany
 1. **Swearin'** - Sunday, January 27, 2019 @ Badehaus, Berlin, Germany
 1. **Mike Krol** - Tuesday, April 9, 2019 @ Monarch Bar, Berlin, Germany
+1. **Kurt Vile** - Tuesday, June 4, 2019 @ Astra Kulturhaus, Berlin, Germany
+1. **Tommy Guererro** - Monday, August 12, 2019 @ Festsaal Kreuzberg, Berlin, Germany
+1. **Oh Sees** - Saturday, August 31, 2019 @ Festsaal Kreuzberg, Berlin, Germany
+1. **Ty Segall** - Tuesday, October 15, 2019 @ Festsaal Kreuzberg, Berlin, Germany
