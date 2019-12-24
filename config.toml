@@ -1,28 +1,33 @@
-baseurl = "http://andydyer.org/"
+baseURL = "http://andydyer.org/"
 languageCode = "en-us"
-# title = "Andy Dyer"
-theme = "hyde-y"
-MetaDataFormat = "toml"
-disqusShortname = "andydyerorg"
-copyright = "© 2017 Copyright Andy Dyer"
+title = "Andy Dyer"
+theme = "hyde-hyde"
 canonifyURLs = true
 relativeURLs = false
+googleAnalytics = "UA-48421946-1"
 
 [author]
   name = "Andy Dyer"
-
-[params]
-  description = "Senior Android Engineer [@ZalandoTech](https://twitter.com/zalandotech), editor [@ProAndroidDev](https://twitter.com/proandroiddev), occasional conference speaker."
-
-  # theme specific
-  sidebar = "left"
-  brand = "Andy Dyer"
-  topline = "Senior Android Engineer [@ZalandoTech](https://twitter.com/zalandotech), editor [@ProAndroidDev](https://twitter.com/proandroiddev), occasional conference speaker."
-  github = "abdyer"
-  twitter = "dammitandy"
-  linkedin = "abdyer"
-  googleAnalytics = "UA-48421946-1"
-  highlight = "monokai_sublime"
+  
+[markup.goldmark.renderer]
+  unsafe= true
 
 [permalinks]
   post = "/blog/:year/:month/:day/:title/"
+
+[Menus]
+  main = [
+      {Name = "Android", URL = "/categories/android"},
+      {Name = "Speaking", URL = "/categories/speaking"},
+      {Name = "Bands I've Seen Live", URL = "/blog/2009/04/19/bands-ive-seen-live"},
+  ]
+
+[params]
+  description = "Senior Android Engineer <a href='https://twitter.com/zalandotech'>@ZalandoTech</a>, editor <a href='https://twitter.com/proandroiddev'>@ProAndroidDev</a>, occasional conference speaker."
+  themeColor = "theme-base-0g"
+  
+[params.social]
+  twitter = "dammitandy"
+  linkedin = "abdyer"
+  github = "abdyer"
+  gravatar = "abdyer@gmail.com"
