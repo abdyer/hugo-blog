@@ -1,7 +1,7 @@
 <div>
 	<ul class="sidebar-nav">
 		{{ $currentPage := . }} 
-		{{ range .Site.Menus.main }} 
+		{{ range sort .Site.Menus.main ".Weight" }} 
 			{{ if .HasChildren }}
 			<li {{ if $currentPage.HasMenuCurrent "main" . }}class="active"{{ end }}>
 				<a href="#">{{ .Pre }}

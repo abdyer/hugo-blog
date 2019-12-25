@@ -17,9 +17,9 @@ googleAnalytics = "UA-48421946-1"
 
 [Menus]
   main = [
-      {Name = "Android", URL = "/categories/android"},
-      {Name = "Speaking", URL = "/categories/speaking"},
-      {Name = "Bands I've Seen Live", URL = "/blog/2009/04/19/bands-ive-seen-live"},
+      {Weight = 0, Name = "Android", URL = "/categories/android"},
+      {Weight = 1, Name = "Speaking", URL = "/categories/speaking"},
+      {Weight = 2, Name = "Bands I've Seen Live", URL = "/blog/2009/04/19/bands-ive-seen-live"},
   ]
 
 [params]
