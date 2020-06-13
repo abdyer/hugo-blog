@@ -148,3 +148,4 @@ I've been thinking for quite some time about trying to compile a list of all the
 1. **Tommy Guererro** - Monday, August 12, 2019 @ Festsaal Kreuzberg, Berlin, Germany
 1. **Oh Sees** - Saturday, August 31, 2019 @ Festsaal Kreuzberg, Berlin, Germany
 1. **Ty Segall** - Tuesday, October 15, 2019 @ Festsaal Kreuzberg, Berlin, Germany
+1. **Chris Staples** - Tuesday, January 28, 2020 @ Kantine am Berghain, Berlin, Germany
