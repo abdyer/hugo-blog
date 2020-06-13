@@ -1,7 +1,7 @@
 ---
 title: "Automating development tasks with Kotlin Script"
 date: 2020-04-23T07:46:28+02:00
-draft: false
+draft: true
 categories: ["Android", "Kotlin"]
 ---
 
