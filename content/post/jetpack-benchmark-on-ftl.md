@@ -57,17 +57,17 @@ To solve our two challenges, we'll need a few ingredients. We'll look at each an
 
 We need a custom `Application` class to set up the appropriate mocks for our benchmark tests. With a custom `AndroidBenchmarkRunner` class, we can create an instance of our `BenchmarkApp` class. We can also add the problematic environment variable to enable JSON output in the `Bundle` argument to the runner's `onCreate()` function:
 
-{{< gist 053a04804d2d1cafcafd8ba7f54a8877 >}}
+{{< gist abdyer 053a04804d2d1cafcafd8ba7f54a8877 >}}
 
 Then, update the benchmark module's `build.gradle` to use the custom runner:
 
-{{< gist 0369db76e4c3ec9e1379e72198deee1d >}}
+{{< gist abdyer 0369db76e4c3ec9e1379e72198deee1d >}}
 
 #### Benchmark test annotation
 
 Benchmark tests will likely run separately from other UI tests since they require (or are at least strongly encouraged to be run on) a physical device and don't need to run as often as other types of tests. Initially, we scheduled our benchmarks to run weekly. Marking the tests with a custom annotation will allow us to filter them in our Fladle config:
 
-{{< gist b65d0e57b871455cebf06c0849952408 >}}
+{{< gist abdyer b65d0e57b871455cebf06c0849952408 >}}
 
 #### Fladle config
 
@@ -77,7 +77,7 @@ Next, configure [Fladle](https://github.com/runningcode/fladle) to run our tests
 - `directoriesToPull` and `filesToDownload` - grabs everything in the device's `Download` directory
 - `testTargets` - filters this task to only benchmark tests tagged with our `@BenchmarkTest` annotation
 
-{{< gist 232ec78ee0f640bf9d332ba80a3d30bd >}}
+{{< gist abdyer 232ec78ee0f640bf9d332ba80a3d30bd >}}
 
 #### Running benchmarks & saving results
 
