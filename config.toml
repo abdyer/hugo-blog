@@ -1,4 +1,4 @@
-baseURL = "http://andydyer.org/"
+baseURL = "https://andydyer.org/"
 languageCode = "en-us"
 title = "Andy Dyer"
 theme = "hyde-hyde"
