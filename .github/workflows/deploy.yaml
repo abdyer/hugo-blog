@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Hugo deploy
 
 on:
   push:
@@ -6,20 +6,25 @@ on:
       - master
 
 jobs:
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout master
-      uses: actions/checkout@v1
-      with:
-        submodules: true
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-    - name: Hugo Deploy GitHub Pages
-      uses: benmatselby/hugo-deploy-gh-pages@master
-      env:
-        HUGO_VERSION: 0.61.0
-        TARGET_REPO: abdyer/abdyer.github.io
-        TOKEN: ${{ secrets.TOKEN }}
-        CNAME: www.andydyer.org
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.61.0'
+          # extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          publish_dir: ./public
