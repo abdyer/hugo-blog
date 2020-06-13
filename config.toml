@@ -1,6 +1,6 @@
 baseURL = "https://andydyer.org/"
 languageCode = "en-us"
-title = "Andy Dyer"
+title = "Andy Dyer!"
 theme = "hyde-hyde"
 canonifyURLs = true
 relativeURLs = false
