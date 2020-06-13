@@ -29,3 +29,4 @@ jobs:
           personal_token: ${{ secrets.TOKEN }}
           publish_dir: ./public
           publish_branch: master
+          external_repository: abdyer/abdyer.github.io
