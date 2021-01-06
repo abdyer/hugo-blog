@@ -13,5 +13,5 @@ That alone easily makes MCE one of the best conferences I've been to. On top of 
 Here are the slides from my talk on Android testing. The sample app is available on [GitHub](https://github.com/abdyer/android-test-demo). I previously gave this talk at the Big Android BBQ back in October. In preparation for MCE, I updated the slides and sample app to use Dagger 2 and Espresso 2.
 
 Testing on Android is still not as easy as it should be, but it is getting better. First class testing support is expected when Dagger 2 is ready for release. I can't wait for the remaining roadblocks to be removed one by one.
-<p/>
-<script async class="speakerdeck-embed" data-id="bb843936f2694612853dc525d0a76a75" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+The slides are available [here on Speaker Deck](https://speakerdeck.com/abdyer/mce2015-automated-testing-for-modern-android-applications).
