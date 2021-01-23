@@ -24,37 +24,11 @@ Let's start with the flex attributes, which describe the direction, size, and ho
 
 [Flex direction](https://drafts.csswg.org/css-flexbox-1/#flex-direction-property) specifies whether items are arranged vertically or horizontally. Compose has [`Row`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/package-summary#row) and [`Column`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/package-summary#column) composables that work for simple horizontal and vertical layouts.
 
-```kotlin   
-@Composable
-fun RowExample() {
-    Row(
-        modifier = Modifier.fillMaxWidth()
-            .padding(bottom = 16.dp)
-            .background(color = MaterialTheme.colors.primaryVariant),
-    ) {
-        Child()
-        Child()
-        Child()
-    }
-}
-```
+{{< gist abdyer 9f7077b8fcab3c83d9c2a96def79ed4d >}}
 
 If [flex wrap](https://drafts.csswg.org/css-flexbox-1/#flex-wrap-property) behavior is needed to control how items wrap across multiple rows, the [`FlowRow`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/package-summary#flowrow) and [`FlowColumn`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/package-summary#flowcolumn) composables will do this. However, [these were deprecated](https://android-review.googlesource.com/c/platform/frameworks/support/+/1521704) before I even finished writing this article (that's alpha for you), so the best we can do is use the old implementation as a reference for our own.
 
-```kotlin
-@Deprecated
-@Composable
-fun FlowRowExample() {
-    FlowRow(
-        mainAxisSpacing = 8.dp,
-        crossAxisSpacing = 8.dp
-    ) {
-        repeat(20) {
-            Child(width = 48.dp, height = 24.dp)
-        }
-    }
-}
-```
+{{< gist abdyer e5f130aca0ee471c0d39f95157ab1d52 >}}
 
 #### Flex Grow & Shrink
 
@@ -62,74 +36,32 @@ fun FlowRowExample() {
 
 Use the `weight()` modifier for flex grow behavior. Compose does not really have a flex shrink analog, but with its variety of layout composables, this can be overcome with a different approach in most cases. Depending on your specific needs, one approach could be to use `Modifier.preferredWidth(IntrinsicSize.Min)` to specify that a composable should not take up any more space than its children require. You can read more about it [here](https://jetc.dev/slack/2021-01-17-matching-parent-size.html) in this question reposted from the [kotlinlang Slack](https://slack.kotlinlang.org/) in Mr. Mark Murphy's excellent [jetc.dev](https://jetc.dev) newsletter.
 
-```kotlin
-@Composable
-fun FlexGrowExample() {
-    Row(
-        modifier = Modifier.fillMaxWidth()
-            .padding(bottom = 16.dp)
-            .background(color = MaterialTheme.colors.primaryVariant),
-    ) {
-        FlexChild(modifier = Modifier.weight(1F))
-        FlexChild(modifier = Modifier.weight(2F))
-        FlexChild(modifier = Modifier.weight(1F))
-    }
-}
-```
+{{< gist abdyer 10a090bcf6df5dad21e9d0a208ab5971     >}}
 
 When the utmost flexibility is needed, there's always [implementing your own](https://developer.android.com/codelabs/jetpack-compose-layouts#5) `Layout` composable or the raw power of the [ConstraintLayout composable](https://developer.android.com/jetpack/compose/layout#contraintlayout), which can be used directly from Compose. If you don't mind reading Java instead of Kotlin, the implementation in Google's [`flexbox-layout` library](https://github.com/google/flexbox-layout/blob/master/flexbox/src/main/java/com/google/android/flexbox/FlexboxHelper.java) is a good starting point for understanding the algorithm.
 
 ### Alignment
 
-Alignment controls how items are arranged on their vertical and horizontal axes. This can be done on a parent layout with the `*-content` properties or on the children themselves using the `*-items` properties.
+Alignment controls how items are arranged on their vertical and horizontal axes. This can be done on a parent layout with the `*-content` properties or on the children themselves using the `*-self` properties.
 
 #### Main Axis
 
 Main axis alignment refers to how children are aligned on the main axis of their parent; horizontal for rows and vertical for columns. In the flexbox spec, this is known as [`justify-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content). In Compose, main axis alignment is controlled by the the `horizontalArrangement` parameter passed to `Row` and the `verticalArrangement` parameter passed to `Column`. Both include options such as start/end, center, and space around/between/evenly for possible values.
 
-```kotlin
-@Composable
-fun ArrangementExample() {
-    Row(
-        modifier = Modifier.fillMaxWidth()
-            .padding(bottom = 16.dp)
-            .background(color = MaterialTheme.colors.primaryVariant),
-        horizontalArrangement = Arrangement.SpaceBetween,
-    ) {
-        Child()
-        Child()
-        Child()
-    }
-}
-```
+{{< gist abdyer e21506416488ef0fcc47a0bb20e35deb >}}
 
 #### Cross Axis
-Cross axis alignment refers to how children are aligned on the non-main axis of their parent; vertical for rows and horizontal for columns. In the flexbox spec, [`align-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items) controls layout children and [`align-self`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self) allows children to do so themselves. In Compose, cross axis alignment is controlled by the `verticalAlignment` parameter passed to `Row`, the `horizontalAlignment` parameter passed to `Column`, and the `align` modifier on their child composables. Both include options start, end, and center for possible values.
+Cross axis alignment refers to how children are aligned on the non-main axis of their parent; vertical for rows and horizontal for columns. In the flexbox spec, [`align-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items) and [`align-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content) control layout children while [`align-self`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self) allows children to do so themselves. In Compose, cross axis alignment is controlled by the `verticalAlignment` parameter passed to `Row`, the `horizontalAlignment` parameter passed to `Column`, and the `align` modifier on their child composables. Both include options start, end, and center for possible values.
 
-```kotlin
-@Composable
-fun AlignmentExample() {
-    Row(
-        modifier = Modifier.fillMaxWidth()
-            .height(150.dp)
-            .padding(bottom = 16.dp)
-            .background(color = MaterialTheme.colors.primaryVariant),
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        Child()
-        Child()
-        Child()
-    }
-}
-```
+{{< gist abdyer 1f8296d92e0ea8aa3766d45dfa886d42 >}}
 
-You may have noticed that the space around/between/evenly options from `justify-content` are not listed for the cross axis. This is because there is no cross axis space around/between alignment in Compose. However, the resulting layout could be achieved via other modifier combinations.
+You may have noticed that the space around/between/evenly options from `justify-content` are not listed for the cross axis. This is because there is no cross axis space around/between alignment in Compose. However, the resulting layout could be achieved via other composable combinations.
 
 Flexbox also specifies a `stretch` option for cross axis alignment. In Compose, the `stretch` equivalent would be individual children using the `fillMaxSize()`/`fillMaxWidth()`/`fillMaxHeight()` modifiers. 
 
 ### Layout
 
-Layout attributes describe the remaining non-flex properties that affect a view's size and position.
+Finally, let's look at a few other attributes that affect a view's size and position.
 
 #### Aspect Ratio
 
@@ -137,18 +69,7 @@ Compose's `aspectRatio()` modifier works exactly as you'd expect. It takes a flo
 
 For example, specifying `fillMaxWidth()` and `aspectRatio(16F / 9F)` results in a rectangle that fills the width of the screen with a height corresponding to 9/16 of that width.
 
-```kotlin
-@Composable
-fun AspectRatioExample() {
-    Box(
-        modifier = Modifier.padding(bottom = 16.dp)
-            .background(color = MaterialTheme.colors.secondary)
-            .fillMaxWidth()
-            .aspectRatio(16F / 9F)
-            .border(width = 2.dp, color = MaterialTheme.colors.secondaryVariant)
-    )
-}
-```
+{{< gist abdyer 45e32ad15d8a7eed722e82d09ab637d4 >}}
 
 #### Padding & Margins
 
@@ -158,23 +79,7 @@ Compose has a `padding()` modifier, but none for margins. Margins can be conside
 
 When absolute positioning is needed to place one composable on top of another, the [`Box`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/package-summary#box) composable can be used. `Box` children can use the `align()` modifier to specify where they are aligned within the box including top start/center/end, bottom start/center/end, and center start/end.
 
-```kotlin
-@Composable
-fun AbsolutePositionExample() {
-    Box {
-        Box(
-            modifier = Modifier.fillMaxWidth()
-                .height(240.dp)
-                .background(color = MaterialTheme.colors.primaryVariant)
-        )
-        Child(modifier = Modifier.align(Alignment.TopStart))
-        Child(modifier = Modifier.align(Alignment.TopEnd))
-        Child(modifier = Modifier.align(Alignment.BottomStart))
-        Child(modifier = Modifier.align(Alignment.BottomEnd))
-        Child(modifier = Modifier.align(Alignment.Center))
-    }
-}
-```
+{{< gist abdyer b95ec3643c5f169b392b24cfa4ad4e6c >}}
 
 ### Conclusion
 
