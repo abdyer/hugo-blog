@@ -1,7 +1,7 @@
 +++
 author = "Andy Dyer"
 date = "2009-04-19T9:12:31"
-categories = ["Ticketmaster sucks but live music is worth getting robbed", "Music", "I go to a lot of concerts"]
+categories = ["Ticketmaster sucks", "Music", "I go to a lot of concerts"]
 title = "Bands I've Seen Live"
 type = "post"
 comments = false
@@ -149,3 +149,4 @@ I've been thinking for quite some time about trying to compile a list of all the
 1. **Oh Sees** - Saturday, August 31, 2019 @ Festsaal Kreuzberg, Berlin, Germany
 1. **Ty Segall** - Tuesday, October 15, 2019 @ Festsaal Kreuzberg, Berlin, Germany
 1. **Chris Staples** - Tuesday, January 28, 2020 @ Kantine am Berghain, Berlin, Germany
+1. **Mdou Moctar** - Monday, September 20, 2021 @ Globe Hall, Denver, CO
