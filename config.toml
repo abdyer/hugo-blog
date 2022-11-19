@@ -23,7 +23,7 @@ googleAnalytics = "UA-48421946-1"
   ]
 
 [params]
-  description = "Senior Android Engineer <a href='https://twitter.com/zalandotech'>@ZalandoTech</a>, editor <a href='https://twitter.com/proandroiddev'>@ProAndroidDev</a>, occasional conference speaker."
+  description = "Staff Platform Engineer <a href='https://twitter.com/ibottatech'>@IbottaTech</a>, editor <a href='https://twitter.com/proandroiddev'>@ProAndroidDev</a>"
   themeColor = "theme-base-0g"
   
 [params.social]
@@ -31,3 +31,4 @@ googleAnalytics = "UA-48421946-1"
   linkedin = "abdyer"
   github = "abdyer"
   gravatar = "abdyer@gmail.com"
+  mastodon = "https://mastodon.social/@andydyer"
