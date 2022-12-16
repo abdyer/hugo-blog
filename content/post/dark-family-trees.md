@@ -40,7 +40,7 @@ The code below is one way to implement this logic, but please let me know (or [o
 
 #### Who is their own ancestor?
 
-Such a weird thought, right? Once again, I'm sorry to be the one to spoil this for you if you missed this juicy bit of the plot, but a couple people in the Dark family trees are their own ancestor. 🤯 While the approach for identifying time travelers involved recursively mapping the tree, we'll need to collect the list of ancestors as we go to identify the self ancestors. We can do with with a `data class`, the [`fold` function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/fold.html), and more recursion:
+Such a weird thought, right? Once again, I'm sorry to be the one to spoil this for you if you missed this juicy bit of the plot, but a couple people in the Dark family trees are their own ancestor. 🤯 While the approach for identifying time travelers involved recursively mapping the tree, we'll need to collect the list of ancestors as we go to identify the self ancestors. We can do this with a `data class`, the [`fold` function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/fold.html), and more recursion:
 
 {{< gist abdyer 386a793ca6b550a185b9cf033f567b7a >}}
 
