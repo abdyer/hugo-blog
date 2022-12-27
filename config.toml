@@ -27,7 +27,6 @@ googleAnalytics = "UA-48421946-1"
   themeColor = "theme-base-0g"
   
 [params.social]
-  twitter = "dammitandy"
   linkedin = "abdyer"
   github = "abdyer"
   gravatar = "abdyer@gmail.com"
