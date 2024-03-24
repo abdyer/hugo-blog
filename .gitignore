@@ -1,3 +1,4 @@
 .DS_Store
-public/*
 .vscode/*
+public/*
+resources/_gen/*
