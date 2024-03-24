@@ -20,7 +20,7 @@ jobs:
         uses: peaceiris/actions-hugo@16361eb4acea8698b220b76c0d4e84e1fd22c61d
         with:
           hugo-version: '0.124.1'
-          # extended: true
+          extended: true
 
       - name: Build
         run: hugo --minify
