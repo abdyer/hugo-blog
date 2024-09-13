@@ -153,3 +153,4 @@ I've been thinking for quite some time about trying to compile a list of all the
 1. **Charley Crockett** - Wednesday, April 13, 2022 @ Boulder Theater, Boulder, CO
 1. **Fuzz** - Saturday, April 24, 2022 @ Gothic Theater, Englewood, CO
 1. **Ty Segall** - Thursday, May 9, 2024 @ Gothic Theater, Englewood, CO
+1. **Osees** - Wednesday, September 11, 2024 @ Ogden Theatre, Denver CO
