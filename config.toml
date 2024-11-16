@@ -23,7 +23,7 @@ googleAnalytics = "UA-48421946-1"
   ]
 
 [params]
-  description = "Staff Platform Engineer <a href='https://twitter.com/ibottatech'>@IbottaTech</a>, editor <a href='https://twitter.com/proandroiddev'>@ProAndroidDev</a>"
+  description = "Staff Platform Engineer at Ibotta, editor at ProAndroidDev"
   themeColor = "theme-base-0g"
   
 [params.social]
