@@ -3,7 +3,7 @@ author: "Andy Dyer"
 title: "Top Albums of 2021"
 date: 2021-12-24T10:09:09-07:00
 draft: false
-categories: ["Music"]
+categories: ["Music", "Top Albums"]
 ---
 
 This year I said farewell to Berlin, road tripped around southern Germany, and moved to sunny Colorado. Here's my list of favorite albums that soundtracked it all:

@@ -2,7 +2,7 @@
 author: "Andy Dyer" 
 title: "Top Albums of 2020"
 date: 2020-12-22T12:02:28+01:00
-categories: ["Music"]
+categories: ["Music", "Top Albums"]
 ---
 
 This year was full of unexpected surprises, disappointments, and more for everyone, but music was here to comfort us throughout. Here's my list of favorite albums for the year:

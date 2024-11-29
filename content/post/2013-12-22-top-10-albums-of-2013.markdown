@@ -3,7 +3,7 @@ type: post
 title: "Top 10 Albums of 2013"
 date: "2013-12-22"
 comments: true
-categories: [Music, Top 10]
+categories: ["Music", "Top Albums"]
 ---
 
 Each year, I keep a list of albums that I find myself listening to frequently. This is the time of year when I review the list and pick my top 10. I ventured into hip-hop and electronic music a bit more this year. Psych rock and 90s style fuzz are also well represented.

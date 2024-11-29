@@ -2,7 +2,7 @@
 title: "Top Albums of 2023"
 date: 2023-12-22T17:17:43-07:00
 draft: false
-categories: ["Music"]
+categories: ["Music", "Top Albums"]
 ---
 
 You'd think I'd do more with a prestigious domain name like [andydyer.org](https://andydyer.org) than post a list of my favorite albums once a year. Someday, perhaps.

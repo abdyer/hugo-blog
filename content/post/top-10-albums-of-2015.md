@@ -1,5 +1,5 @@
 +++
-Categories = ['Music', 'Top 10']
+Categories = ['Music', 'Top Albums']
 Tags = []
 date = "2016-01-02T14:38:02-06:00"
 title = "Top 10 Albums of 2015"

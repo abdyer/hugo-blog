@@ -3,7 +3,7 @@ author: "Andy Dyer"
 title: "Top Albums of 2022"
 date: 2022-12-27T14:43:53-07:00
 draft: false
-categories: ["Music"]
+categories: ["Music", "Top Albums"]
 ---
 
 This year's top albums list is a mix of chill & aggressive, ranging from folky Americana, to psych rock, and even punk. While past favorites Kendrick Lamar & Earl Sweatshirt both released long-awaited albums, I did not find myself returning to them the way I did with their previous releases.

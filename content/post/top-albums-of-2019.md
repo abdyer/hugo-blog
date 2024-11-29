@@ -1,7 +1,7 @@
 +++
 author = "Andy Dyer"
 date = "2019-12-23T17:47:45"
-categories = ["Music"]
+categories = ["Music", "Top Albums"]
 title = "Top Albums of 2019"
 type = "post"
 +++

@@ -3,7 +3,7 @@ type: post
 title: "Top 10 Albums of 2014"
 date: "2014-12-26"
 comments: true
-categories: [Music, Top 10]
+categories: ["Music", "Top Albums"]
 ---
 
 The end of another year means it's time for the annual Top 10 Favorite Albums list.
