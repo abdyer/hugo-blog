@@ -154,3 +154,5 @@ I've been thinking for quite some time about trying to compile a list of all the
 1. **Fuzz** - Saturday, April 24, 2022 @ Gothic Theater, Englewood, CO
 1. **Ty Segall** - Thursday, May 9, 2024 @ Gothic Theater, Englewood, CO
 1. **Osees** - Wednesday, September 11, 2024 @ Ogden Theatre, Denver CO
+1. **Osees, DMBQ** - Wednesday, September 10, 2025 @ Ogden Theatre, Denver CO
+1. **Ice Cube** - Tuesday, September 16, 2025 @ Ball Arena, Denver, CO
