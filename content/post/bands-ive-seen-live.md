@@ -156,3 +156,4 @@ I've been thinking for quite some time about trying to compile a list of all the
 1. **Osees** - Wednesday, September 11, 2024 @ Ogden Theatre, Denver CO
 1. **Osees, DMBQ** - Wednesday, September 10, 2025 @ Ogden Theatre, Denver CO
 1. **Ice Cube** - Tuesday, September 16, 2025 @ Ball Arena, Denver, CO
+1. **Upchuck** - Monday, October 13, 2025 @ Moe's Original BBQ, Englewood, CO
