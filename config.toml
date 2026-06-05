@@ -31,3 +31,6 @@ googleAnalytics = "G-PEEF2LV798"
   github = "abdyer"
   gravatar = "abdyer@gmail.com"
   mastodon = "https://mastodon.social/@andydyer"
+
+[security]
+  allowContent = ["^text/markdown$", "^text/html$"]
